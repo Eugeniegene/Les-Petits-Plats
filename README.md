@@ -1,6 +1,6 @@
 # Les-Petits-Plats
 
-![Logo](./assets/logo.png)
+![Logo](/assets/logo.png)
 
 ## Développez un algorithme de recherche en JavaScript
 
