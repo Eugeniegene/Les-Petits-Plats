@@ -2,7 +2,7 @@
   "name": "p7-les-petits-plats",
   "version": "1.0.0",
   "description": "Implémentez un algorithme de recherche de recettes de cuisines pour le site Les Petits Plats grâce à des outils et méthodes avancées de Javascript ainsi que Bootstrap pour l'interface.",
-  "main": "index.html",
+  "main": "index.js",
   "source": "index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
