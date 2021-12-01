@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Implémentez un algorithme de recherche de recettes de cuisines pour le site Les Petits Plats grâce à des outils et méthodes avancées de Javascript ainsi que Bootstrap pour l'interface.",
   "main": "index.html",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",
     "build": "parcel build"
   },
-  "source": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/git504/Les-Petits-Plats.git"
