@@ -6,9 +6,9 @@
 
 - Implémentez un algorithme de recherche de recettes de cuisines pour le site **Les Petits Plats** grâce à des outils et méthodes avancées de Javascript ainsi que Bootstrap pour l'interface.
 
-[![forthebadge](assets/image/algo-with-love.svg)](https://forthebadge.com) `npm start`
+[![forthebadge](assets/image/algo-with-love.svg)](https://forthebadge.com)
 
-**LIEN REPO GITHUB :** https://github.com/git504/Les-Petits-Plats
+**LANCE LE PROJET AVEC LA COMMMANDE :** `npm start`
 
 - [Respect de la maquette](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 - [Implémenter les données des 50 recettes](https://github.com/OpenClassrooms-Student-Center/P11-front-end-search-engine)
