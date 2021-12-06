@@ -12,9 +12,9 @@
 
 @font-face {
   font-family: "latoregular";
-  src: url("lato-regular-webfont.c6364560.woff2")
+  src: url("../assets/font/webfontkit-20211203-075005/lato-regular-webfont.woff2")
       format("woff2"),
-    url("lato-regular-webfont.fa0218b5.woff")
+    url("../assets/font/webfontkit-20211203-075005/lato-regular-webfont.woff")
       format("woff");
   font-weight: 400;
   font-style: normal;
@@ -33,20 +33,17 @@ body {
 }
 
 /* header section */
-
 .header {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-
 .header__logo {
   width: 201px;
 }
 
 /* search section */
-
 .search__input-group {
   position: relative;
   overflow: hidden;
@@ -94,25 +91,20 @@ body {
   color: #fff;
   padding: 10px 20px;
 }
-
 .tags__item--danger {
   background: var(--danger);
 }
-
 .tags__item--success {
   background: var(--success);
 }
-
 .tags__item--primary {
   background: var(--primary);
 }
-
 .tags__name {
   margin-right: 13px;
 }
 
 /* Filters section */
-
 .filter {
   display: none;
 }
@@ -180,7 +172,7 @@ body {
 }
 
 .filter__custom-arrow::before {
-  content: url("dropdown-icon-up.aa08426c.png");
+  content: url("../assets/image/dropdown-icon-up.png");
 }
 
 .filter__custom-menu {
@@ -233,7 +225,6 @@ body {
 }
 
 /* Recipes section */
-
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -241,26 +232,22 @@ body {
   width: 95%;
   margin: 20px auto;
 }
-
 @media only screen and (min-width: 674px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media only screen and (min-width: 992px) {
   .cards {
     width: 100%;
     gap: 50px;
   }
 }
-
 @media only screen and (min-width: 1198px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 .cards__no-recipes {
   display: flex;
   justify-content: center;
@@ -269,26 +256,22 @@ body {
   height: 200px;
   z-index: -1;
 }
-
 .cards__no-recipes-image {
   position: absolute;
   display: flex;
   z-index: -1;
   opacity: 0.3;
 }
-
 .cards__no-recipes-logo {
   position: absolute;
   top: 15%;
   left: 15%;
 }
-
 .cards__no-recipes-text {
   font-weight: bold;
   font-size: var(--fs-18);
   color: rgb(49, 49, 49);
 }
-
 .card {
   height: 364px;
   background: var(--light-grey);
@@ -357,5 +340,3 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-/*# sourceMappingURL=index.631e8dfc.css.map */

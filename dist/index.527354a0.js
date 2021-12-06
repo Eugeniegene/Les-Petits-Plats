@@ -460,6 +460,10 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"eNGUc":[function(require,module,exports) {
 "use strict";
+const isReload = ()=>{
+    window.location.reload();
+};
+document.getElementsByClassName("header__brand").onclick = isReload;
 
 },{}]},["dNb64","eNGUc"], "eNGUc", "parcelRequire94c2")
 
