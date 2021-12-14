@@ -1,7 +1,4 @@
-"use strict";
+console.log("%c index.js", "color: green; font-weight:bold;");
+("use strict");
 
-const isReload = () => {
-  window.location.reload();
-};
-
-document.getElementsByClassName("header__brand").onclick = isReload;
+import * as api from "./api.js";

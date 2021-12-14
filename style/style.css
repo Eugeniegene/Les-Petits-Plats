@@ -308,6 +308,10 @@ body {
   text-overflow: ellipsis;
 }
 
+.card__timeclock {
+  content: url("../assets/image/time.svg");
+}
+
 .card__time {
   display: flex;
   align-items: center;
