@@ -3,7 +3,7 @@ import { showElts } from "./index.js";
 
 // GET DATA
 export const GET_RECIPES = (async () => {
-  const res = await fetch("../assets/data/db.json")
+  await fetch("../assets/data/db.json")
     .then((response) => {
       return response.json();
     })
