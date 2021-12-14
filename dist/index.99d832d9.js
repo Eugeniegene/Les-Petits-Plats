@@ -459,26 +459,127 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"41U8Z":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// DISPLAY DES COMPOSANTS
+parcelHelpers.export(exports, "showElts", ()=>showElts
+);
 var _apiJs = require("./api.js");
 console.log("%c index.js", "color: green; font-weight:bold;");
 "use strict";
+function showElts(datas) {
+    datas.forEach((recipe)=>{
+        console.log(recipe);
+        let LE_PETIT_CHEF = new _apiJs.renderRecipes(recipe.appliance, recipe.description, recipe.id, recipe.ingredients, recipe.name, recipe.servings, recipe.time, recipe.ustensils);
+        LE_PETIT_CHEF.displayCards();
+        LE_PETIT_CHEF.listOfIngredients();
+    });
+}
 
-},{"./api.js":"8kprd"}],"8kprd":[function(require,module,exports) {
+},{"./api.js":"8kprd","@parcel/transformer-js/src/esmodule-helpers.js":"avw9N"}],"8kprd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GET_RECIPES", ()=>GET_RECIPES
+);
+parcelHelpers.export(exports, "renderRecipes", ()=>renderRecipes
+);
+var _indexJs = require("./index.js");
 console.log("%c api.js", "color: green; font-weight:bold;");
-"use strict";
-const FETCH_RECIPES = fetch("http://localhost:3000/recipes");
-const get_recipes = async ()=>{
-    return await FETCH_RECIPES.then((response)=>{
+const GET_RECIPES = (async ()=>{
+    const res = await fetch("../assets/data/db.json").then((response)=>{
         return response.json();
-    }).then((result)=>{
-        console.log(result);
+    }).then((data)=>{
+        // console.log(data.recipes);
+        _indexJs.showElts(data.recipes);
     }).catch((error)=>{
-        console.error("Error:", error);
+        error.message;
+    });
+})();
+function renderRecipes(appliance, description, id, ingredients, name, servings, time, ustensils) {
+    this.appliance = appliance;
+    this.description = description;
+    this.id = id;
+    this.ingredients = ingredients;
+    this.name = name;
+    this.servings = servings;
+    this.time = time;
+    this.ustensils = ustensils;
+    this.displayCards = function() {
+        document.querySelector(".cards").innerHTML += innerComponent.CARD;
+    };
+    this.listOfIngredients = function() {
+        for (const ingredient of this.ingredients)return `
+      <li class="card__ingredient">
+      <span class="card__ingredient--bold">${ingredient.ingredient}</span>${ingredient.quantity} ${ingredient.unit}
+      </li>`;
+    };
+    this.displayFilterIngredients = function() {
+        console.log("hello");
+    //inner
+    };
+    this.displayFilterAppliance = function() {
+        console.log("hello");
+    //inner
+    };
+    this.displayFilterUstensils = function() {
+        console.log("hello");
+    //inner
+    };
+    const innerComponent = {
+        CARD: `<article class="card">
+                <a href="#">
+                  <div class="card__thumb"></div>
+                  <div class="card__body">
+                    <div class="card__head">
+                      <h2 class="card__title">${this.name}</h2>
+                      <div class="card__time">
+                        <i class="card__timeclock"></i>
+                        <p class="card__minutes">${this.time} min</p>
+                      </div>
+                    </div>
+                    <div class="card__content">
+                      <ul class="card__ingredients">
+                      ${this.listOfIngredients()}
+                      </ul>
+                      <p class="card__description">
+                      ${this.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>`
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"avw9N","./index.js":"41U8Z"}],"avw9N":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
     });
 };
-const db = get_recipes();
-const name = db.name;
-console.log(name);
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["cLB8d","41U8Z"], "41U8Z", "parcelRequire94c2")
 

@@ -325,6 +325,10 @@ body {
   text-overflow: ellipsis;
 }
 
+.card__timeclock {
+  content: url("time.455d83cf.svg");
+}
+
 .card__time {
   display: flex;
   align-items: center;

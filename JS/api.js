@@ -1,18 +1,22 @@
 console.log("%c api.js", "color: green; font-weight:bold;");
+import { showElts } from "./index.js";
 
-GET_RECIPES = (function () {
-  fetch("../assets/data/db.json")
+// GET DATA
+export const GET_RECIPES = (async () => {
+  const res = await fetch("../assets/data/db.json")
     .then((response) => {
-      // console.log(response.json());
       return response.json();
     })
     .then((data) => {
-      console.log(data.recipes);
+      // console.log(data.recipes);
       showElts(data.recipes);
+    })
+    .catch((error) => {
+      error.message;
     });
 })();
 
-function renderRecipes(
+export function renderRecipes(
   appliance,
   description,
   id,
@@ -81,23 +85,4 @@ function renderRecipes(
                 </a>
               </article>`,
   };
-}
-
-function showElts(datas) {
-  datas.forEach((recipe) => {
-    let display_LEPETITCHEF = new renderRecipes(
-      recipe.appliance,
-      recipe.description,
-      recipe.id,
-      recipe.ingredients,
-      recipe.name,
-      recipe.servings,
-      recipe.time,
-      recipe.ustensils
-    );
-    console.log(display_LEPETITCHEF);
-
-    display_LEPETITCHEF.displayCards();
-    display_LEPETITCHEF.listOfIngredients();
-  });
 }
