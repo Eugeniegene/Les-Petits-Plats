@@ -1,6 +1,6 @@
 console.log("%c api.js", "color: green; font-weight:bold;");
 
-import * as index from "./index.js";
+import * as index from "../index.js";
 
 // GET DATA
 export const GET_RECIPES = (async () => {
