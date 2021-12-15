@@ -20,6 +20,5 @@ export function showElts(datas) {
     );
 
     LE_PETIT_CHEF.displayCards();
-    // LE_PETIT_CHEF.listOfIngredients();
   });
 }
