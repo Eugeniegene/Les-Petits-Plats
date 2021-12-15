@@ -1,4 +1,4 @@
-console.log("%c api.js", "color: green; font-weight:bold;");
+// console.log("%c api.js", "color: green; font-weight:bold;");
 
 import * as index from "../index.js";
 
@@ -26,17 +26,6 @@ export function renderRecipes(data) {
     return data;
   };
 }
-
-
-
-
-
-
-
-
-
-
-
 
 renderRecipes.prototype.displayFilterIngredients = function (data) {
   console.log(data);
