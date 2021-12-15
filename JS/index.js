@@ -3,10 +3,10 @@ console.log("%c index.js", "color: green; font-weight:bold;");
 
 import * as api from "./api.js";
 
-// DISPLAY DES COMPOSANTS
+// DISPLAY COMPONENTS
 export function showElts(datas) {
-  datas.forEach((recipe) => {
-    console.log(recipe);
+  datas.map((recipe, index) => {
+    // console.log(recipe, index);
     let LE_PETIT_CHEF = new api.renderRecipes(
       recipe.appliance,
       recipe.description,
@@ -15,10 +15,11 @@ export function showElts(datas) {
       recipe.name,
       recipe.servings,
       recipe.time,
-      recipe.ustensils
+      recipe.ustensils,
+      index
     );
 
     LE_PETIT_CHEF.displayCards();
-    LE_PETIT_CHEF.listOfIngredients();
+    // LE_PETIT_CHEF.listOfIngredients();
   });
 }

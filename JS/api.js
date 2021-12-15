@@ -2,8 +2,8 @@ console.log("%c api.js", "color: green; font-weight:bold;");
 import { showElts } from "./index.js";
 
 // GET DATA
-export const GET_RECIPES = (async () => {
-  await fetch("../assets/data/db.json")
+export const GET_RECIPES = (() => {
+  fetch("../assets/data/db.json")
     .then((response) => {
       return response.json();
     })
@@ -24,7 +24,8 @@ export function renderRecipes(
   name,
   servings,
   time,
-  ustensils
+  ustensils,
+  index
 ) {
   this.appliance = appliance;
   this.description = description;
@@ -34,18 +35,54 @@ export function renderRecipes(
   this.servings = servings;
   this.time = time;
   this.ustensils = ustensils;
+  this.index = index;
 
   this.displayCards = function () {
-    document.querySelector(".cards").innerHTML += innerComponent.CARD;
-  };
+    let listCard_HTML = "";
+    this.ingredients.map((elt) => {
+      // console.log(
+      //   elt.ingredient ? elt.ingredient : "",
+      //   elt.quantity ? elt.quantity : "",
+      //   elt.unit ? elt.unit : ""
+      // );
 
-  this.listOfIngredients = function () {
-    for (const ingredient of this.ingredients) {
-      return `
-      <li class="card__ingredient">
-      <span class="card__ingredient--bold">${ingredient.ingredient}</span>${ingredient.quantity} ${ingredient.unit}
-      </li>`;
-    }
+      listCard_HTML += `<li class="card__ingredient">
+        <span class="card__ingredient--bold">${
+          elt.ingredient ? elt.ingredient : ""
+        }</span>  ${elt.quantity ? elt.quantity : ""} ${
+        elt.unit ? elt.unit : ""
+      }
+       </li>`;
+
+      // console.log(listCard_HTML);
+      return listCard_HTML;
+    });
+
+    document.querySelector(".cards").insertAdjacentHTML(
+      "afterbegin",
+      `<article class="card">
+      <a href="#">
+      <div class="card__thumb"></div>
+      <div class="card__body">
+      <div class="card__head">
+      <h2 class="card__title">${name}</h2>
+      <div class="card__time">
+      <i class="card__timeclock"></i>
+      <p class="card__minutes">${time} min</p>
+      </div>
+      </div>
+      <div class="card__content">
+      <ul class="card__ingredients">
+                      ${listCard_HTML}
+                      </ul>
+                      <p class="card__description">
+                      ${description}
+                      </p>
+                    </div>
+                    </div>
+                </a>
+              </article>`
+    );
   };
 
   this.displayFilterIngredients = function () {
@@ -59,30 +96,5 @@ export function renderRecipes(
   this.displayFilterUstensils = function () {
     console.log("hello");
     //inner
-  };
-
-  const innerComponent = {
-    CARD: `<article class="card">
-                <a href="#">
-                  <div class="card__thumb"></div>
-                  <div class="card__body">
-                    <div class="card__head">
-                      <h2 class="card__title">${this.name}</h2>
-                      <div class="card__time">
-                        <i class="card__timeclock"></i>
-                        <p class="card__minutes">${this.time} min</p>
-                      </div>
-                    </div>
-                    <div class="card__content">
-                      <ul class="card__ingredients">
-                      ${this.listOfIngredients()}
-                      </ul>
-                      <p class="card__description">
-                      ${this.description}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </article>`,
   };
 }
