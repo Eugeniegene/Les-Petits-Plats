@@ -1,5 +1,4 @@
 console.log("%c api.js", "color: green; font-weight:bold;");
-import { showElts } from "./index.js";
 
 // GET DATA
 export const GET_RECIPES = (() => {
@@ -9,7 +8,7 @@ export const GET_RECIPES = (() => {
     })
     .then((data) => {
       // console.log(data.recipes);
-      showElts(data.recipes);
+      renderRecipes.prototype.displayCards(data.recipes);
     })
     .catch((error) => {
       error.message;
@@ -24,8 +23,7 @@ export function renderRecipes(
   name,
   servings,
   time,
-  ustensils,
-  index
+  ustensils
 ) {
   this.appliance = appliance;
   this.description = description;
@@ -35,11 +33,28 @@ export function renderRecipes(
   this.servings = servings;
   this.time = time;
   this.ustensils = ustensils;
-  this.index = index;
 
-  this.displayCards = function () {
+  this.displayFilterIngredients = function () {
+    console.log("hello");
+    //inner
+  };
+  this.displayFilterAppliance = function () {
+    console.log("hello");
+    //inner
+  };
+  this.displayFilterUstensils = function () {
+    console.log("hello");
+    //inner
+  };
+}
+
+renderRecipes.prototype.displayCards = function (recipes) {
+  // console.log(data);
+  recipes.map((recipe) => {
+    // console.log(recipe);
     let listCard_HTML = "";
-    this.ingredients.map((elt) => {
+
+    recipe.ingredients.map((elt) => {
       // console.log(
       //   elt.ingredient ? elt.ingredient : "",
       //   elt.quantity ? elt.quantity : "",
@@ -56,8 +71,8 @@ export function renderRecipes(
 
       // console.log(listCard_HTML);
       return listCard_HTML;
+      // });
     });
-
     document.querySelector(".cards").insertAdjacentHTML(
       "afterbegin",
       `<article class="card">
@@ -65,10 +80,10 @@ export function renderRecipes(
       <div class="card__thumb"></div>
       <div class="card__body">
       <div class="card__head">
-      <h2 class="card__title">${name}</h2>
+      <h2 class="card__title">${recipe.name}</h2>
       <div class="card__time">
       <i class="card__timeclock"></i>
-      <p class="card__minutes">${time} min</p>
+      <p class="card__minutes">${recipe.time} min</p>
       </div>
       </div>
       <div class="card__content">
@@ -76,25 +91,12 @@ export function renderRecipes(
                       ${listCard_HTML}
                       </ul>
                       <p class="card__description">
-                      ${description}
+                      ${recipe.description}
                       </p>
                     </div>
                     </div>
                 </a>
               </article>`
     );
-  };
-
-  this.displayFilterIngredients = function () {
-    console.log("hello");
-    //inner
-  };
-  this.displayFilterAppliance = function () {
-    console.log("hello");
-    //inner
-  };
-  this.displayFilterUstensils = function () {
-    console.log("hello");
-    //inner
-  };
-}
+  });
+};
