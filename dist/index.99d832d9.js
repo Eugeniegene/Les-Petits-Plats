@@ -140,7 +140,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"cLB8d":[function(require,module,exports) {
+})({"g6Flt":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
@@ -459,38 +459,24 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"41U8Z":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-// DISPLAY DES COMPOSANTS
-parcelHelpers.export(exports, "showElts", ()=>showElts
-);
 var _apiJs = require("./api.js");
 console.log("%c index.js", "color: green; font-weight:bold;");
 "use strict";
-function showElts(datas) {
-    datas.forEach((recipe)=>{
-        console.log(recipe);
-        let LE_PETIT_CHEF = new _apiJs.renderRecipes(recipe.appliance, recipe.description, recipe.id, recipe.ingredients, recipe.name, recipe.servings, recipe.time, recipe.ustensils);
-        LE_PETIT_CHEF.displayCards();
-        LE_PETIT_CHEF.listOfIngredients();
-    });
-}
 
-},{"./api.js":"8kprd","@parcel/transformer-js/src/esmodule-helpers.js":"avw9N"}],"8kprd":[function(require,module,exports) {
+},{"./api.js":"8kprd"}],"8kprd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GET_RECIPES", ()=>GET_RECIPES
 );
 parcelHelpers.export(exports, "renderRecipes", ()=>renderRecipes
 );
-var _indexJs = require("./index.js");
 console.log("%c api.js", "color: green; font-weight:bold;");
-const GET_RECIPES = (async ()=>{
-    const res = await fetch("../assets/data/db.json").then((response)=>{
+const GET_RECIPES = (()=>{
+    fetch("../assets/data/db.json").then((response)=>{
         return response.json();
     }).then((data)=>{
         // console.log(data.recipes);
-        _indexJs.showElts(data.recipes);
+        renderRecipes.prototype.displayCards(data.recipes);
     }).catch((error)=>{
         error.message;
     });
@@ -504,15 +490,6 @@ function renderRecipes(appliance, description, id, ingredients, name, servings, 
     this.servings = servings;
     this.time = time;
     this.ustensils = ustensils;
-    this.displayCards = function() {
-        document.querySelector(".cards").innerHTML += innerComponent.CARD;
-    };
-    this.listOfIngredients = function() {
-        for (const ingredient of this.ingredients)return `
-      <li class="card__ingredient">
-      <span class="card__ingredient--bold">${ingredient.ingredient}</span>${ingredient.quantity} ${ingredient.unit}
-      </li>`;
-    };
     this.displayFilterIngredients = function() {
         console.log("hello");
     //inner
@@ -525,33 +502,51 @@ function renderRecipes(appliance, description, id, ingredients, name, servings, 
         console.log("hello");
     //inner
     };
-    const innerComponent = {
-        CARD: `<article class="card">
-                <a href="#">
-                  <div class="card__thumb"></div>
-                  <div class="card__body">
-                    <div class="card__head">
-                      <h2 class="card__title">${this.name}</h2>
-                      <div class="card__time">
-                        <i class="card__timeclock"></i>
-                        <p class="card__minutes">${this.time} min</p>
-                      </div>
-                    </div>
-                    <div class="card__content">
-                      <ul class="card__ingredients">
-                      ${this.listOfIngredients()}
+}
+renderRecipes.prototype.displayCards = function(recipes) {
+    // console.log(data);
+    recipes.map((recipe)=>{
+        // console.log(recipe);
+        let listCard_HTML = "";
+        recipe.ingredients.map((elt)=>{
+            // console.log(
+            //   elt.ingredient ? elt.ingredient : "",
+            //   elt.quantity ? elt.quantity : "",
+            //   elt.unit ? elt.unit : ""
+            // );
+            listCard_HTML += `<li class="card__ingredient">
+        <span class="card__ingredient--bold">${elt.ingredient ? elt.ingredient : ""}</span>  ${elt.quantity ? elt.quantity : ""} ${elt.unit ? elt.unit : ""}
+       </li>`;
+            // console.log(listCard_HTML);
+            return listCard_HTML;
+        // });
+        });
+        document.querySelector(".cards").insertAdjacentHTML("afterbegin", `<article class="card">
+      <a href="#">
+      <div class="card__thumb"></div>
+      <div class="card__body">
+      <div class="card__head">
+      <h2 class="card__title">${recipe.name}</h2>
+      <div class="card__time">
+      <i class="card__timeclock"></i>
+      <p class="card__minutes">${recipe.time} min</p>
+      </div>
+      </div>
+      <div class="card__content">
+      <ul class="card__ingredients">
+                      ${listCard_HTML}
                       </ul>
                       <p class="card__description">
-                      ${this.description}
+                      ${recipe.description}
                       </p>
                     </div>
-                  </div>
+                    </div>
                 </a>
-              </article>`
-    };
-}
+              </article>`);
+    });
+};
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"avw9N","./index.js":"41U8Z"}],"avw9N":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -581,6 +576,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["cLB8d","41U8Z"], "41U8Z", "parcelRequire94c2")
+},{}]},["g6Flt","41U8Z"], "41U8Z", "parcelRequire94c2")
 
 //# sourceMappingURL=index.99d832d9.js.map

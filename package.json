@@ -7,7 +7,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm-run-all --parallel parcel",
+    "start": "parcel",
     "build": "parcel build",
     "server": "json-server --watch assets/data/db.json",
     "parcel": "parcel"
