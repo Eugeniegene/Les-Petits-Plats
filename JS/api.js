@@ -4,7 +4,7 @@ import * as index from "../index.js";
 
 // GET DATA
 export const GET_RECIPES = (async () => {
-  await fetch("./db.json")
+  await fetch("./recipes.json")
     .then((response) => {
       return response.json();
     })
