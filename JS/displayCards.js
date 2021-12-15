@@ -21,9 +21,9 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
 
       listCard_HTML += `<li class="card__ingredient">
           <span class="card__ingredient--bold">${
-            elt.ingredient ? elt.ingredient : ""
+            elt.ingredient ? elt.ingredient.trim() : ""
           }</span>  ${elt.quantity ? elt.quantity : ""} ${
-        elt.unit ? elt.unit : ""
+        elt.unit ? elt.unit.toLowerCase().trim() : ""
       }
          </li>`;
 
@@ -38,10 +38,10 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
         <div class="card__thumb"></div>
         <div class="card__body">
         <div class="card__head">
-        <h2 class="card__title">${recipe.name}</h2>
+        <h2 class="card__title">${recipe?.name}</h2>
         <div class="card__time">
         <i class="card__timeclock"></i>
-        <p class="card__minutes">${recipe.time} min</p>
+        <p class="card__minutes">${recipe?.time} min</p>
         </div>
         </div>
         <div class="card__content">
@@ -49,7 +49,7 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
                         ${listCard_HTML}
                         </ul>
                         <p class="card__description">
-                        ${recipe.description}
+                        ${recipe?.description}
                         </p>
                       </div>
                       </div>

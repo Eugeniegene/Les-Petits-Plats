@@ -1,16 +1,16 @@
 console.log("%c api.js", "color: green; font-weight:bold;");
 
-import * as cards from "./displayCards.js";
 import * as index from "./index.js";
 
 // GET DATA
-export const GET_RECIPES = (() => {
-  fetch("../assets/data/db.json")
+export const GET_RECIPES = (async () => {
+  await fetch("../assets/data/db.json")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
       // console.log(data.recipes);
+      renderRecipes.prototype.displayFilterIngredients(data.recipes);
       index.GET_RECIPES_HYDRATE(data.recipes);
     })
     .catch((error) => {
@@ -18,6 +18,7 @@ export const GET_RECIPES = (() => {
     });
 })();
 
+// CONSTRUCTEUR
 export function renderRecipes(data) {
   this.data = data;
   this.returnRecipes = function (data) {
@@ -26,8 +27,19 @@ export function renderRecipes(data) {
   };
 }
 
-renderRecipes.prototype.displayFilterIngredients = function () {
-  console.log("displayFilterIngredients");
+
+
+
+
+
+
+
+
+
+
+
+renderRecipes.prototype.displayFilterIngredients = function (data) {
+  console.log(data);
 };
 
 renderRecipes.prototype.displayFilterAppliance = function () {
