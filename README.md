@@ -8,7 +8,7 @@
 
 [![forthebadge](assets/image/algo-with-love.svg)](https://forthebadge.com)
 
-**LANCE LE PROJET AVEC PARCEL ? :** `npm start` sinon [surf sur le WEBSITE](https://git504.github.io/Les-Petits-Plats/)
+**SURF:** [WEBSITE](https://git504.github.io/Les-Petits-Plats/)
 
 - [Respect de la maquette](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 - [Implémenter les données des 50 recettes](https://github.com/OpenClassrooms-Student-Center/P11-front-end-search-engine)

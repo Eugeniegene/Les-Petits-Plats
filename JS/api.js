@@ -1,5 +1,8 @@
 console.log("%c api.js", "color: green; font-weight:bold;");
 
+import * as cards from "./displayCards.js";
+import * as index from "./index.js";
+
 // GET DATA
 export const GET_RECIPES = (() => {
   fetch("../assets/data/db.json")
@@ -8,95 +11,29 @@ export const GET_RECIPES = (() => {
     })
     .then((data) => {
       // console.log(data.recipes);
-      renderRecipes.prototype.displayCards(data.recipes);
+      index.GET_RECIPES_HYDRATE(data.recipes);
     })
     .catch((error) => {
       error.message;
     });
 })();
 
-export function renderRecipes(
-  appliance,
-  description,
-  id,
-  ingredients,
-  name,
-  servings,
-  time,
-  ustensils
-) {
-  this.appliance = appliance;
-  this.description = description;
-  this.id = id;
-  this.ingredients = ingredients;
-  this.name = name;
-  this.servings = servings;
-  this.time = time;
-  this.ustensils = ustensils;
-
-  this.displayFilterIngredients = function () {
-    console.log("hello");
-    //inner
-  };
-  this.displayFilterAppliance = function () {
-    console.log("hello");
-    //inner
-  };
-  this.displayFilterUstensils = function () {
-    console.log("hello");
-    //inner
+export function renderRecipes(data) {
+  this.data = data;
+  this.returnRecipes = function (data) {
+    console.log(data);
+    return data;
   };
 }
 
-renderRecipes.prototype.displayCards = function (recipes) {
-  // console.log(data);
-  recipes.map((recipe) => {
-    // console.log(recipe);
-    let listCard_HTML = "";
+renderRecipes.prototype.displayFilterIngredients = function () {
+  console.log("displayFilterIngredients");
+};
 
-    recipe.ingredients.map((elt) => {
-      // console.log(
-      //   elt.ingredient ? elt.ingredient : "",
-      //   elt.quantity ? elt.quantity : "",
-      //   elt.unit ? elt.unit : ""
-      // );
+renderRecipes.prototype.displayFilterAppliance = function () {
+  console.log("displayFilterAppliance");
+};
 
-      listCard_HTML += `<li class="card__ingredient">
-        <span class="card__ingredient--bold">${
-          elt.ingredient ? elt.ingredient : ""
-        }</span>  ${elt.quantity ? elt.quantity : ""} ${
-        elt.unit ? elt.unit : ""
-      }
-       </li>`;
-
-      // console.log(listCard_HTML);
-      return listCard_HTML;
-      // });
-    });
-    document.querySelector(".cards").insertAdjacentHTML(
-      "afterbegin",
-      `<article class="card">
-      <a href="#">
-      <div class="card__thumb"></div>
-      <div class="card__body">
-      <div class="card__head">
-      <h2 class="card__title">${recipe.name}</h2>
-      <div class="card__time">
-      <i class="card__timeclock"></i>
-      <p class="card__minutes">${recipe.time} min</p>
-      </div>
-      </div>
-      <div class="card__content">
-      <ul class="card__ingredients">
-                      ${listCard_HTML}
-                      </ul>
-                      <p class="card__description">
-                      ${recipe.description}
-                      </p>
-                    </div>
-                    </div>
-                </a>
-              </article>`
-    );
-  });
+renderRecipes.prototype.displayFilterUstensils = function () {
+  console.log("displayFilterUstensils");
 };
