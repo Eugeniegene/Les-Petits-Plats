@@ -10,7 +10,7 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
       listCard_HTML += `<li class="card__ingredient">
           <span class="card__ingredient--bold">${
             elt.ingredient ? elt.ingredient.trim() : ""
-          }</span>  ${elt.quantity ? elt.quantity : ""} ${
+          }</span>  ${elt.quantity ? elt.quantity.toString().trim() : ""} ${
         elt.unit ? elt.unit.toLowerCase().trim() : ""
       }
          </li>`;
