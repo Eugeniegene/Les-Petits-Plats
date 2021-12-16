@@ -9,6 +9,8 @@ export const GET_RECIPES = (async () => {
       return response.json();
     })
     .then((data) => {
+      renderRecipes.prototype.displayFilterUstensils(data.recipes);
+      renderRecipes.prototype.displayFilterAppliance(data.recipes);
       renderRecipes.prototype.displayFilterIngredients(data.recipes);
       index.GET_RECIPES_HYDRATE(data.recipes);
     })
@@ -26,14 +28,50 @@ export function renderRecipes(data) {
   };
 }
 
+// INGREDIENTS BTN
 renderRecipes.prototype.displayFilterIngredients = function (data) {
-  console.log(data);
+  // console.log(data);
+  const distinctIngredients = [
+    ...new Set(
+      data
+        .map((recipe) =>
+          recipe.ingredients.map((ingredient) =>
+            ingredient.ingredient.toLowerCase().trim()
+          )
+        )
+        .flat()
+        .sort()
+    ),
+  ];
+
+  console.log(distinctIngredients);
 };
 
-renderRecipes.prototype.displayFilterAppliance = function () {
-  console.log("displayFilterAppliance");
+// APPLIANCE BTN
+renderRecipes.prototype.displayFilterAppliance = function (data) {
+  // console.log(data);
+  const distinctAppliance = [
+    ...new Set(
+      data.map((recipe) => recipe.appliance.toLowerCase().trim()).sort()
+    ),
+  ];
+
+  console.log(distinctAppliance);
 };
 
-renderRecipes.prototype.displayFilterUstensils = function () {
-  console.log("displayFilterUstensils");
+// USTENSILS BTN
+renderRecipes.prototype.displayFilterUstensils = function (data) {
+  // console.log(data);
+  const distinctUstensils = [
+    ...new Set(
+      data
+        .map((recipe) =>
+          recipe.ustensils.map((item) => item.toLowerCase().trim())
+        )
+        .flat()
+        .sort()
+    ),
+  ];
+
+  console.log(distinctUstensils);
 };
