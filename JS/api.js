@@ -9,7 +9,6 @@ export const GET_RECIPES = (async () => {
       return response.json();
     })
     .then((data) => {
-      // console.log(data.recipes);
       renderRecipes.prototype.displayFilterIngredients(data.recipes);
       index.GET_RECIPES_HYDRATE(data.recipes);
     })
@@ -18,7 +17,7 @@ export const GET_RECIPES = (async () => {
     });
 })();
 
-// CONSTRUCTEUR
+// FUNCTION CONSTRUCTEUR
 export function renderRecipes(data) {
   this.data = data;
   this.returnRecipes = function (data) {

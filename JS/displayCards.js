@@ -1,24 +1,12 @@
-// console.log("%c displayCards.js", "color: green; font-weight:bold;");
-// ("use strict");
-
 import { renderRecipes } from "./api.js";
 
 // CARDS COMPONENT
 export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
   recipes
 ) {
-  // console.log(data);
   recipes.map((recipe) => {
-    // console.log(recipe);
     let listCard_HTML = "";
-
     recipe.ingredients.map((elt) => {
-      // console.log(
-      //   elt.ingredient ? elt.ingredient : "",
-      //   elt.quantity ? elt.quantity : "",
-      //   elt.unit ? elt.unit : ""
-      // );
-
       listCard_HTML += `<li class="card__ingredient">
           <span class="card__ingredient--bold">${
             elt.ingredient ? elt.ingredient.trim() : ""
@@ -26,10 +14,7 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
         elt.unit ? elt.unit.toLowerCase().trim() : ""
       }
          </li>`;
-
-      // console.log(listCard_HTML);
       return listCard_HTML;
-      // });
     });
     document.querySelector(".cards").insertAdjacentHTML(
       "afterbegin",
