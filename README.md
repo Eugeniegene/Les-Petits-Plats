@@ -8,7 +8,7 @@
 
 [![forthebadge](assets/image/algo-with-love.svg)](https://forthebadge.com)
 
-**SURF:** [WEBSITE](https://git504.github.io/Les-Petits-Plats/)
+**=>** [WEBSITE](https://git504.github.io/Les-Petits-Plats/)
 
 - [Respect de la maquette](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 - [Implémenter les données des 50 recettes](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
