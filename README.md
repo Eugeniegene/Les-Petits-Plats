@@ -8,10 +8,10 @@
 
 [![forthebadge](assets/image/algo-with-love.svg)](https://forthebadge.com)
 
-**=>** [WEBSITE](https://git504.github.io/Les-Petits-Plats/)
+**-->** [WEBSITE](https://git504.github.io/Les-Petits-Plats/)
 
-- [Respect de la maquette](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
-- [Implémenter les données des 50 recettes](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
+- [Respect de la maquette FIGMA](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
+- [Implémenter les données de 50 recettes JSON](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
 - [Implémenter la fonctionnalité de recherche en respectant la "Fiche Cas d’utilisation"](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/description%20du%20cas%20d%E2%80%99utilisation%20de%20recherche.pdf)
 - [Créer une fiche d’investigation de fonctionnalité selon modèle (Document de comparaison)](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Fiche+d%E2%80%99investigation+fonctionnalite%CC%81.pdf)
 - Algorithme de recherche performant, rapide (presque instantanée)
