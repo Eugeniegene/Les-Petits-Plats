@@ -1,6 +1,7 @@
 // console.log("%c api.js", "color: green; font-weight:bold;");
 
 import * as index from "../index.js";
+import { shuffle } from "./utils.js";
 
 // GET DATA
 export const GET_RECIPES = (async () => {
@@ -44,7 +45,8 @@ renderRecipes.prototype.displayFilterIngredients = function (data) {
     ),
   ];
 
-  console.log(distinctIngredients);
+  // reduction aleatoir au click avec sort
+  console.log(shuffle(distinctIngredients));
 };
 
 // APPLIANCE BTN
