@@ -29,7 +29,7 @@ export function renderRecipes(data) {
   };
 }
 
-// INGREDIENTS BTN
+// distinct INGREDIENTS BTN LIST
 renderRecipes.prototype.displayFilterIngredients = function (data) {
   // console.log(data);
   const distinctIngredients = [
@@ -48,7 +48,7 @@ renderRecipes.prototype.displayFilterIngredients = function (data) {
   console.log(shuffle(distinctIngredients));
 };
 
-// APPLIANCE BTN
+// distinct APPLIANCE BTN LIST
 renderRecipes.prototype.displayFilterAppliance = function (data) {
   // console.log(data);
   const distinctAppliance = [
@@ -60,7 +60,7 @@ renderRecipes.prototype.displayFilterAppliance = function (data) {
   console.log(distinctAppliance);
 };
 
-// USTENSILS BTN
+// distinct USTENSILS BTN LIST
 renderRecipes.prototype.displayFilterUstensils = function (data) {
   // console.log(data);
   const distinctUstensils = [

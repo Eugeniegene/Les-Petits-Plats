@@ -1,16 +1,13 @@
 console.log("%c utils.js", "color: green; font-weight:bold;");
-
+// MELANGER LES ELEMENTS D'UN TABLEAU
 export const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
 
-  // While there remain elements to shuffle...
   while (currentIndex != 0) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
@@ -20,10 +17,16 @@ export const shuffle = (array) => {
   return array;
 };
 
+// SUPPRIMER LES DOUBLONS D'UN TABLEAU
 export const deleteDuplicates = (array) => {
   let cleanDuplicate = [];
   array.forEach((item) => {
     cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : "";
     return cleanDuplicate;
   });
+};
+
+// METTRE LA PREMIERE LETTRE EN LETTRE CAPITALE
+export const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 };
