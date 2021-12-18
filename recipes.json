@@ -326,7 +326,7 @@
         }
       ],
       "time": 15,
-      "description": "Pelez le concombre, le couper, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamique et l'huile d'olive à votre goût",
+      "description": "Pelez le concombre, le couper, retirez les pépins. Coupez les olives en morceaux, ainsi que le fromage de chèvre. Ajoutez le basilic ainsi que le vinaigre balsamique et l'huile d'olive à votre goût",
       "appliance": "Saladier",
       "ustensils": ["cuillère en bois", "couteau"]
     },
@@ -361,7 +361,7 @@
         }
       ],
       "time": 60,
-      "description": "Commencez par cuire les pommes de terre dans l'eau bouillante. Puis épluchez les et coupez les en rondelles. Émincez les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en morceaux ainsi que les pommes de terre. Salez, poivrez à votre goût (et celui de vos convives). Laissez mijoter durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le reblochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
+      "description": "Commencez par cuire les pommes de terre dans l'eau bouillante. Puis épluchez les et coupez les en rondelles. Émincez les oignons puis les faire dorer dans du beurre. Ajoutez le jambon fumé coupé en morceaux ainsi que les pommes de terre. Salez, poivrez à votre goût (et celui de vos convives). Laissez mijoter durant environ 10 minutes puis ajoutez le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le reblochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
       "appliance": "Four",
       "ustensils": ["plat à gratin", "couteau", "Économe"]
     },
@@ -390,7 +390,7 @@
           "quantity": 1
         },
         {
-          "ingredient": "Salade Verte",
+          "ingredient": "Salade verte",
           "quantity": 1
         },
         {
@@ -400,7 +400,7 @@
         }
       ],
       "time": 10,
-      "description": "Commencer par couper les feuilles de salade, ajouter les tomates cerise et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de Parme en fines lamelles. Ajouter la pomme elle aussi découpée en petits morceaux. Assaisonnez à votre goût",
+      "description": "Commencez par couper les feuilles de salade, ajoutez les tomates cerise et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découpez le jambon de Parme en fines lamelles. Ajoutez la pomme elle aussi découpée en petits morceaux. Assaisonnez à votre goût",
       "appliance": "Saladier",
       "ustensils": ["couteau", "cuillère à melon"]
     },
@@ -430,7 +430,7 @@
         }
       ],
       "time": 40,
-      "description": "Éplucher les fruits et les couper en morceaux, les mettre dans une casserole en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement",
+      "description": "Épluchez les fruits et les couper en morceaux, les mettre dans une casserole en ajoutant l'eau et le sucre vanillé. Laissez cuire 15 minutes en remuant régulièrement",
       "appliance": "Casserole",
       "ustensils": ["couteau", "économe"]
     },
@@ -465,7 +465,7 @@
         }
       ],
       "time": 40,
-      "description": "Cuire les pommes de terre environ 30 minutes. Découper les échalotes finement. Durant la cuisson des pommes de terre. Préparez la vinaigrette avec l'huile d'olive et le vinaigre de cidre. Salez, poivrez à discrétion. Dans un saladier, mettre la mâche",
+      "description": "Cuire les pommes de terre environ 30 minutes. Découpez les échalotes finement. Durant la cuisson des pommes de terre. Préparez la vinaigrette avec l'huile d'olive et le vinaigre de cidre. Salez, poivrez à discrétion. Dans un saladier, mettre la mâche",
       "appliance": "Casserole",
       "ustensils": ["couteau", "saladier", "cuillère en bois"]
     },
@@ -503,7 +503,7 @@
         }
       ],
       "time": 100,
-      "description": "Mélangez la farine et les œufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidir. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par-dessus les crêpes. Passer au four pendant 20 minutes",
+      "description": "Mélangez la farine et les œufs, faire fondre 25 grammes de beurre et ajoutez à la pâte. Ajoutez du sel. Laissez reposer 1 heure. Faire les galettes et laissez refroidir. Faire chauffer les saucisses avec du beurre et l'oignon. Enroulez les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par-dessus les crêpes. Passez au four pendant 20 minutes",
       "appliance": "Four",
       "ustensils": ["poêle à frire", "couteau"]
     },
@@ -542,7 +542,7 @@
         }
       ],
       "time": 60,
-      "description": "Mélangez dans un saladier, la farine, les œufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat (avec le reste du beurre salé). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
+      "description": "Mélangez dans un saladier, la farine, les œufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat (avec le reste du beurre salé). Lorsque vous chauffez les crêpes. Ajoutez le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
       "appliance": "Poële à crêpe",
       "ustensils": ["saladier", "louche", "cuillère en bois"]
     },
@@ -578,7 +578,7 @@
         }
       ],
       "time": 45,
-      "description": "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petits morceaux et mélangez-le aux tomates. Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pâtes et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir aux petits comme aux grands",
+      "description": "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découpez les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petits morceaux et mélangez-le aux tomates. Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pâtes et recouvrir du fromage. Laissez au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir aux petits comme aux grands",
       "appliance": "Four",
       "ustensils": ["plat à gratin", "couteau", "râpe à fromage"]
     },
@@ -610,7 +610,7 @@
         }
       ],
       "time": 15,
-      "description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter une cuillère à soupe de juste du citron ainsi que les glaçons. Ajoutez quelques feuilles de menthe pour plus de fraîcheur. Mixez le tout. Servir et déguster",
+      "description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajoutez une cuillère à soupe de juste du citron ainsi que les glaçons. Ajoutez quelques feuilles de menthe pour plus de fraîcheur. Mixez le tout. Servir et déguster",
       "appliance": "Blender",
       "ustensils": ["verres", "couteau", "presse citron"]
     },
@@ -635,7 +635,7 @@
         }
       ],
       "time": 10,
-      "description": "Séparez 1/5 d'Ananas (une belle tranche qui servira pour la décoration des verres), mettre le reste coupé en cubes au blender, ajouter la glace à la vanille et le lait. Mixez. Servir et décorer avec l'ananas restant. C'est prêt",
+      "description": "Séparez 1/5 d'Ananas (une belle tranche qui servira pour la décoration des verres), mettre le reste coupé en cubes au blender, ajoutez la glace à la vanille et le lait. Mixez. Servir et décorer avec l'ananas restant. C'est prêt",
       "appliance": "Blender",
       "ustensils": ["verres", "couteau"]
     },
