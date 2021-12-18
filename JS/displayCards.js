@@ -6,6 +6,7 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
 ) {
   recipes.map((recipe) => {
     let listCard_HTML = "";
+
     recipe.ingredients.map((elt) => {
       listCard_HTML += `<li class="card__ingredient">
           <span class="card__ingredient--bold">${

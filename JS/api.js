@@ -45,7 +45,6 @@ renderRecipes.prototype.displayFilterIngredients = function (data) {
     ),
   ];
 
-  // reduction aleatoir au click avec sort
   console.log(shuffle(distinctIngredients));
 };
 

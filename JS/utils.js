@@ -1,6 +1,6 @@
 console.log("%c utils.js", "color: green; font-weight:bold;");
 
-export function shuffle(array) {
+export const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
 
@@ -18,4 +18,12 @@ export function shuffle(array) {
   }
 
   return array;
-}
+};
+
+export const deleteDuplicates = (array) => {
+  let cleanDuplicate = [];
+  array.forEach((item) => {
+    cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : "";
+    return cleanDuplicate;
+  });
+};
