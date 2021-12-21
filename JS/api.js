@@ -27,7 +27,7 @@ export function renderRecipes(data) {
   };
 }
 
-const getOptionsList = (distinctData) => {
+const getList_HTML = (distinctData) => {
   let li_HTML = "";
   distinctData.map((setLi) => {
     li_HTML += `<li class="filter__custom-option">${capitalize(setLi)}</li>`;
@@ -89,30 +89,34 @@ const displayFilterUstensils = (renderRecipes.prototype.displayFilterUstensils =
     return distinctUstensils;
   });
 
-const hydrateFilter = (data, value, btn) => {
+const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
+  data,
+  value,
+  btn
+) {
   switch (value) {
     case "Ustensiles":
       btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-        ${getOptionsList(displayFilterUstensils(data))}
+        ${getList_HTML(displayFilterUstensils(data))}
         </ul>`;
     // console.log(button);
 
     case "Appareil":
       btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-        ${getOptionsList(displayFilterAppliance(data))}
+        ${getList_HTML(displayFilterAppliance(data))}
         </ul>`;
     // console.log(button);
 
     case "Ingrédients":
       btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-        ${getOptionsList(displayFilterIngredients(data))}
+        ${getList_HTML(displayFilterIngredients(data))}
         </ul>`;
     // console.log(button);
 
     default:
       break;
   }
-};
+});
 
 renderRecipes.displayBtn = function (data) {
   document.querySelectorAll(".filter__select").forEach((button) => {
