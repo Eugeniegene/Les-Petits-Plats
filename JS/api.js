@@ -1,7 +1,6 @@
 // console.log("%c api.js", "color: green; font-weight:bold;");
 
 import * as index from "../index.js";
-import { capitalize, shuffle } from "./utils.js";
 
 // GET DATA
 export const GET_RECIPES = (async () => {
@@ -10,7 +9,6 @@ export const GET_RECIPES = (async () => {
       return response.json();
     })
     .then((data) => {
-      // DISPLAY_FILTERS(data.recipes);
       index.GET_RECIPES_HYDRATE(data.recipes);
     })
     .catch((error) => {
