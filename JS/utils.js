@@ -30,3 +30,19 @@ export const deleteDuplicates = (array) => {
 export const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+// RELOAD window.location.reload
+export const windowLocationReload = () => {
+  window.location.reload();
+};
+
+// CLOSE TAGS
+export const tagIsNoneSuccess = () => {
+  document.getElementsByClassName("tags__item--success").style.display = "none";
+};
+export const tagIsNoneDanger = () => {
+  document.getElementsByClassName("tags__item--danger").style.display = "none";
+};
+export const tagIsNonePrimary = () => {
+  document.getElementsByClassName("tags__item--primary").style.display = "none";
+};

@@ -9,7 +9,7 @@
       name="description"
     />
     <meta
-      content="Les petits plats, outil de recettes de cuisine, Marmiton, 750g"
+      content="Les petits plats, outil de recettes de cuisine"
       name="keywords"
     />
     <link rel="icon" href="./assets/image/icone.svg" />
@@ -23,7 +23,7 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <a class="header__brand" href="#">
+        <a class="header__brand" href="javascript:window.location.reload()">
           <img
             src="./assets/image/logo.svg"
             class="header__logo"
@@ -38,7 +38,7 @@
             <input
               type="text"
               class="search__input"
-              placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette"
+              placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette..."
             />
             <button class="search__button">
               <img src="./assets/image/loupe.svg" alt="" />
@@ -47,19 +47,25 @@
         </section>
 
         <section class="tags">
-          <span class="tags__item tags__item--danger">
-            <span class="tags__name">Cuillère à soupe</span>
-            <i class="far fa-times-circle fa-lg tags__close"></i>
-          </span>
-
           <span class="tags__item tags__item--success">
             <span class="tags__name">Blender</span>
-            <i class="far fa-times-circle fa-lg tags__close"></i>
+            <span class="tags__close">
+              <img src="./assets/image/remove-icon.png" alt=""
+            /></span>
+          </span>
+
+          <span class="tags__item tags__item--danger">
+            <span class="tags__name">Cuillère à soupe</span>
+            <span class="tags__close">
+              <img src="./assets/image/remove-icon.png" alt=""
+            /></span>
           </span>
 
           <span class="tags__item tags__item--primary">
             <span class="tags__name">Sucre</span>
-            <i class="far fa-times-circle fa-lg tags__close"></i>
+            <span class="tags__close">
+              <img src="./assets/image/remove-icon.png" alt=""
+            /></span>
           </span>
         </section>
 
@@ -73,21 +79,7 @@
               data-value="Ingrédients"
               value="Ingrédients"
             />
-            <ul class="filter__custom-menu filter__custom-menu--primary">
-              <li class="filter__custom-option" data-color="primary">
-                Crème de coco
-              </li>
-              <li class="filter__custom-option" data-color="primary">
-                Glaçons
-              </li>
-              <li class="filter__custom-option" data-color="primary">
-                Jus de citron
-              </li>
-              <li class="filter__custom-option" data-color="primary">
-                Lait de coco
-              </li>
-              <li class="filter__custom-option" data-color="primary">Sucre</li>
-            </ul>
+            <!-- UL et LI COMPONENT JAVASCRIPTS  -->
           </div>
 
           <div class="filter__custom-select" style="width: 170px">
@@ -99,11 +91,7 @@
               data-value="Appareil"
               value="Appareil"
             />
-            <ul class="filter__custom-menu filter__custom-menu--success">
-              <li class="filter__custom-option" data-color="success">
-                Blender
-              </li>
-            </ul>
+            <!-- UL et LI COMPONENT JAVASCRIPTS  -->
           </div>
 
           <div class="filter__custom-select" style="width: 170px">
@@ -115,15 +103,7 @@
               data-value="Ustensiles"
               value="Ustensiles"
             />
-            <ul class="filter__custom-menu filter__custom-menu--danger">
-              <li class="filter__custom-option" data-color="danger">
-                Cuillère à soupe
-              </li>
-              <li class="filter__custom-option" data-color="danger">
-                Presse citron
-              </li>
-              <li class="filter__custom-option" data-color="danger">Verres</li>
-            </ul>
+            <!-- UL et LI COMPONENT JAVASCRIPTS  -->
           </div>
         </section>
         <section class="cards">
