@@ -25,7 +25,7 @@ export function renderRecipes(data) {
   };
 }
 
-//DISPLAY BTN ONCLIKCK
+// DISPLAY BTN ONCLIKCK
 // let buttonValue = button.getAttribute("value");
 // console.log(buttonValue);
 
