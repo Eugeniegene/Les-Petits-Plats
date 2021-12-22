@@ -1,4 +1,5 @@
-console.log("%c utils.js", "color: green; font-weight:bold;");
+// console.log("%c utils.js", "color: green; font-weight:bold;");
+
 // MELANGER LES ELEMENTS D'UN TABLEAU
 export const shuffle = (array) => {
   let currentIndex = array.length,
