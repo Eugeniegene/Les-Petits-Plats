@@ -1,10 +1,12 @@
-let tagsArray = [
+// console.log("%c displayTags.js", "color: green; font-weight:bold;");
+
+export let tagsArray = [
   { title: "Blender", color: "success" },
   { title: "Cuillère à soupe", color: "danger" },
   { title: "Sucre", color: "primary" },
 ];
 
-const tagIsNone = (e) => {
+export const tagIsNone = (e) => {
   // console.log(e.currentTarget.id);
   let ID = e.currentTarget.id;
   ID = parseInt(ID);
@@ -13,7 +15,7 @@ const tagIsNone = (e) => {
   showListOfTags(tagsArray);
 };
 
-const showListOfTags = function (arrayOfTags) {
+export const showListOfTags = function (arrayOfTags) {
   let tag_HTML = "";
 
   arrayOfTags.forEach((tag, index) => {
@@ -28,10 +30,8 @@ const showListOfTags = function (arrayOfTags) {
 
   // LISTENNER DES TAGS
   const listenToTags = (function () {
-    document.querySelectorAll(".tags__close").forEach((X) => {
-      X.addEventListener("click", tagIsNone);
+    document.querySelectorAll(".tags__close").forEach((x) => {
+      x.addEventListener("click", tagIsNone);
     });
   })();
 };
-
-showListOfTags(tagsArray);
