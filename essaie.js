@@ -24,3 +24,4 @@ const fruitsSearch2 = (tab, letter) => {
 
 console.log(fruitsSearch(fruits, "n"));
 console.log(fruitsSearch2(fruits, "n"));
+
