@@ -14,5 +14,6 @@ export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
     filters.DISPLAY_FILTERS(recipes);
   });
 
+  
 // AFFICHE LES TAGS  ET UPDATE
 tags.showListOfTags(tags.tagsArray);
