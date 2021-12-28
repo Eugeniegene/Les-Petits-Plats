@@ -2,7 +2,8 @@
 
 const fruits = ["orange", "pomme", "banane", "cerise", "kiwi", "clementine"];
 
-const fruitsSearch = (tab, letter) => {
+// algo utilisant les boucles natives (while, for...)
+const algoFruit1 = (tab, letter) => {
   let result = [];
   for (let i = 0; i < tab.length; i++) {
     let fruit = tab[i];
@@ -17,11 +18,11 @@ const fruitsSearch = (tab, letter) => {
   return result;
 };
 
-const fruitsSearch2 = (tab, letter) => {
+// algo programmation fonctionnelle avec les méthodes de l'objet array (foreach, filter, map, reduce)
+const algoFruit2 = (tab, letter) => {
   let result = tab.filter((fruit) => fruit.includes(letter));
   return result;
 };
 
-console.log(fruitsSearch(fruits, "n"));
-console.log(fruitsSearch2(fruits, "n"));
-
+console.log(algoFruit1(fruits, "n"));
+console.log(algoFruit2(fruits, "n"));
