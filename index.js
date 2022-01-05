@@ -51,4 +51,10 @@ const changeInputTypeInText = (button, buttonValue) => {
   }
 };
 
+// AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
 console.timeEnd("index.js");
+
+// EFFACE LA CONSOLE APRES 7 SECONDE
+setTimeout(() => {
+  console.clear("this is the first message");
+}, 7000);
