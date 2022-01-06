@@ -25,7 +25,7 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     buttonValue = btn.getAttribute("value");
     console.log(buttonValue, btn);
-    //changeInputTypeInText(btn, buttonValue);
+    changeInputTypeInText(btn, buttonValue);
   });
 });
 
@@ -33,18 +33,28 @@ const changeInputTypeInText = (button, buttonValue) => {
   button.setAttribute("type", "text");
   button.setAttribute("data-value", `${buttonValue}`);
   button.removeAttribute("value");
-  // rotatearrow : filter__custom-arrow filter__custom-arrow--rotate
-  // filter__custom-select : style : width 50%
   // filter__custom-menu ajouter filter__show
   switch (buttonValue) {
     case "Appareil":
+      button.parentNode.style.width = "50%";
       button.setAttribute("placeholder", "Recherche un appareil");
+      button.previousElementSibling.classList.add(
+        "filter__custom-arrow--rotate"
+      );
       break;
     case "Ingrédients":
+      button.parentNode.style.width = "50%";
       button.setAttribute("placeholder", "Recherche un ingrédient");
+      button.previousElementSibling.classList.add(
+        "filter__custom-arrow--rotate"
+      );
       break;
     case "Ustensiles":
+      button.parentNode.style.width = "50%";
       button.setAttribute("placeholder", "Recherche un ustensile");
+      button.previousElementSibling.classList.add(
+        "filter__custom-arrow--rotate"
+      );
       break;
     default:
       break;
@@ -55,6 +65,6 @@ const changeInputTypeInText = (button, buttonValue) => {
 console.timeEnd("index.js");
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
-setTimeout(() => {
-  console.clear("this is the first message");
-}, 7000);
+// setTimeout(() => {
+//   console.clear("this is the first message");
+// }, 7000);
