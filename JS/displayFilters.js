@@ -16,7 +16,7 @@ const displayFilterIngredients =
             )
           )
           .flat()
-          .sort()
+        // .sort()
       ),
     ];
 
@@ -85,7 +85,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
       </ul>`
       );
 
-      // console.log(button);
+      // console.log(data);
       break;
     case "Appareil":
       btn.insertAdjacentHTML(
@@ -116,7 +116,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
   document.querySelectorAll(".filter__select").forEach((button) => {
     let value = button.getAttribute("value");
-    console.log(data, value, button);
+    // console.log(data, value, button);
     hydrateFilter(data, value, button);
   });
 });
