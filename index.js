@@ -18,48 +18,55 @@ export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
 tags.showListOfTags(tags.tagsArray);
 
 // // DISPLAY BTN ONCLIKCK
-let buttons = document.querySelectorAll(".filter__select");
-let buttonValue;
+// let buttons = document.querySelectorAll(".filter__select");
+// let buttonValue;
 
-buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    buttonValue = btn.getAttribute("value");
-    console.log(buttonValue, btn);
-    changeInputTypeInText(btn, buttonValue);
-  });
-});
+// buttons.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     buttonValue = btn.getAttribute("value");
+//     console.log(buttonValue, btn);
+//     changeInputTypeInText(btn, buttonValue);
+//   });
+// });
 
-const changeInputTypeInText = (button, buttonValue) => {
-  button.setAttribute("type", "text");
-  button.setAttribute("data-value", `${buttonValue}`);
-  button.removeAttribute("value");
-  // filter__custom-menu ajouter filter__show
-  switch (buttonValue) {
-    case "Appareil":
-      button.parentNode.style.width = "50%";
-      button.setAttribute("placeholder", "Recherche un appareil");
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
-      break;
-    case "Ingrédients":
-      button.parentNode.style.width = "50%";
-      button.setAttribute("placeholder", "Recherche un ingrédient");
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
-      break;
-    case "Ustensiles":
-      button.parentNode.style.width = "50%";
-      button.setAttribute("placeholder", "Recherche un ustensile");
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
-      break;
-    default:
-      break;
-  }
-};
+// const changeInputTypeInText = (button, buttonValue) => {
+//   button.setAttribute("type", "text");
+//   button.setAttribute("data-value", `${buttonValue}`);
+//   button.removeAttribute("value");
+
+//   switch (buttonValue) {
+//     case "Appareil":
+//       // élargie le button type texte
+//       button.parentNode.style.width = "50%";
+//       // affiche la liste
+//       button.firstChild.classList.add("filter__show");
+//       // set un placeholder
+//       button.setAttribute("placeholder", "Recherche un appareil");
+//       // rotate de la fleche
+//       button.previousElementSibling.classList.add(
+//         "filter__custom-arrow--rotate"
+//       );
+//       break;
+//     case "Ingrédients":
+//       button.parentNode.style.width = "50%";
+//       button.firstChild.classList.add("filter__show");
+//       button.setAttribute("placeholder", "Recherche un ingrédient");
+//       button.previousElementSibling.classList.add(
+//         "filter__custom-arrow--rotate"
+//       );
+//       break;
+//     case "Ustensiles":
+//       button.parentNode.style.width = "50%";
+//       button.firstChild.classList.add("filter__show");
+//       button.setAttribute("placeholder", "Recherche un ustensile");
+//       button.previousElementSibling.classList.add(
+//         "filter__custom-arrow--rotate"
+//       );
+//       break;
+//     default:
+//       break;
+//   }
+// };
 
 // AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
 console.timeEnd("index.js");

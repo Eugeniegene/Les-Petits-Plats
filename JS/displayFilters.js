@@ -76,21 +76,31 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 ) {
   switch (value) {
     case "Ustensiles":
-      btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-          ${list_HTML(displayFilterUstensils(data))}
-          </ul>`;
+      //inserer au bon endroit
+      btn.insertAdjacentHTML(
+        "beforend",
+        `<ul class="filter__custom-menu filter__custom-menu--danger">
+      ${list_HTML(displayFilterUstensils(data))}
+      </ul>`
+      );
     // console.log(button);
 
     case "Appareil":
-      btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-          ${list_HTML(displayFilterAppliance(data))}
-          </ul>`;
+      btn.insertAdjacentHTML(
+        "beforend",
+        `<ul class="filter__custom-menu filter__custom-menu--success">
+      ${list_HTML(displayFilterAppliance(data))}
+      </ul>`
+      );
     // console.log(button);
 
     case "Ingrédients":
-      btn.innerHTML = `<ul class="filter__custom-menu filter__custom-menu--danger">
-          ${list_HTML(displayFilterIngredients(data))}
-          </ul>`;
+      btn.insertAdjacentHTML(
+        "beforend",
+        `<ul class="filter__custom-menu filter__custom-menu--primary">
+      ${list_HTML(displayFilterIngredients(data))}
+      </ul>`
+      );
     // console.log(button);
 
     default:
@@ -100,9 +110,9 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 
 // FONCTION GLOBALE
 export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
-  document.querySelectorAll(".filter__select").forEach((button) => {
-    let value = button.getAttribute("value");
-    // console.log(data, value, button);
+  document.querySelectorAll(".filter__custom-select").forEach((button) => {
+    let value = button.querySelector(".filter__select").getAttribute("value");
+    console.log(data, value, button);
     hydrateFilter(data, value, button);
   });
 });
