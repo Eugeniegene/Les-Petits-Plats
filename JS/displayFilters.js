@@ -74,35 +74,39 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   value,
   btn
 ) {
+  // console.log(data, value, btn);
   switch (value) {
-    case "Ustensiles":
-      //inserer au bon endroit
-      btn.insertAdjacentHTML(
-        "beforend",
-        `<ul class="filter__custom-menu filter__custom-menu--danger">
-      ${list_HTML(displayFilterUstensils(data))}
-      </ul>`
-      );
-    // console.log(button);
-
-    case "Appareil":
-      btn.insertAdjacentHTML(
-        "beforend",
-        `<ul class="filter__custom-menu filter__custom-menu--success">
-      ${list_HTML(displayFilterAppliance(data))}
-      </ul>`
-      );
-    // console.log(button);
-
     case "Ingrédients":
       btn.insertAdjacentHTML(
-        "beforend",
-        `<ul class="filter__custom-menu filter__custom-menu--primary">
+        "afterend",
+        `
+        <ul class="filter__custom-menu filter__custom-menu--primary">
       ${list_HTML(displayFilterIngredients(data))}
       </ul>`
       );
-    // console.log(button);
 
+      // console.log(button);
+      break;
+    case "Appareil":
+      btn.insertAdjacentHTML(
+        "afterend",
+        `
+        <ul class="filter__custom-menu filter__custom-menu--success">
+      ${list_HTML(displayFilterAppliance(data))}
+      </ul>`
+      );
+      // console.log(button);
+      break;
+    case "Ustensiles":
+      //inserer au bon endroit
+      btn.insertAdjacentHTML(
+        "afterend",
+        `
+        <ul class="filter__custom-menu filter__custom-menu--danger">
+      ${list_HTML(displayFilterUstensils(data))}
+      </ul>`
+      );
+      break;
     default:
       break;
   }
@@ -110,8 +114,8 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 
 // FONCTION GLOBALE
 export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
-  document.querySelectorAll(".filter__custom-select").forEach((button) => {
-    let value = button.querySelector(".filter__select").getAttribute("value");
+  document.querySelectorAll(".filter__select").forEach((button) => {
+    let value = button.getAttribute("value");
     console.log(data, value, button);
     hydrateFilter(data, value, button);
   });
