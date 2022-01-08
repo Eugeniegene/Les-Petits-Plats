@@ -14,7 +14,11 @@
 - [Implémenter les données de 50 recettes JSON](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
 - [Implémenter la fonctionnalité de recherche en respectant la "Fiche Cas d’utilisation"](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/description%20du%20cas%20d%E2%80%99utilisation%20de%20recherche.pdf)
 - [Créer une fiche d’investigation de fonctionnalité selon modèle (Document de comparaison)](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Fiche+d%E2%80%99investigation+fonctionnalite%CC%81.pdf)
-- Deux versions d'algorithme différents : [algoFunc](https://github.com/git504/Les-Petits-Plats/tree/algoFunc) **programmation fonctionnelle** et [algoLoop](https://github.com/git504/Les-Petits-Plats/tree/algoLoop) **boucles natives (while, for...)**
+- Deux versions d'algorithme différents :
+
+1. [algoFunc](https://github.com/git504/Les-Petits-Plats/tree/algoFunc) : **programmation fonctionnelle**
+2. [algoLoop](https://github.com/git504/Les-Petits-Plats/tree/algoLoop) : **boucles natives (while, for...)**
+
 - Créer un [schéma](https://github.com/git504/Les-Petits-Plats/tree/main/assets/doc) de l'enchaînement des étapes de chacun des algorithmes
 - [Utilisation de l'outil de performances JSBEN.CH
   ](https://jsben.ch/6NSzL)
