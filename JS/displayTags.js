@@ -34,3 +34,5 @@ export const showListOfTags = function (arrayOfTags) {
     });
   })();
 };
+
+// push pop des tags
