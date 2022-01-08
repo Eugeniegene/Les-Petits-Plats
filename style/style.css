@@ -161,6 +161,7 @@ body {
   position: absolute;
   right: 18px;
   top: 0;
+  bottom: 4rem;
   display: flex;
   align-items: center;
   height: 100%;

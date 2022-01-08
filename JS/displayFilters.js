@@ -57,10 +57,13 @@ const displayFilterUstensils = (renderRecipes.prototype.displayFilterUstensils =
   });
 
 // HYDRATE HTML DANS LES FILTRES
-const list_HTML = (renderRecipes.prototype.getList_HTML = (distinctData) => {
+const list_HTML = (renderRecipes.prototype.getList_HTML = (
+  distinctData,
+  datacolor
+) => {
   let li_HTML = "";
   distinctData.map((setLi) => {
-    li_HTML += `<li class="filter__custom-option">${utils.capitalize(
+    li_HTML += `<li class="filter__custom-option" data-color="${datacolor}">${utils.capitalize(
       setLi
     )}</li>`;
   });
@@ -72,7 +75,8 @@ const list_HTML = (renderRecipes.prototype.getList_HTML = (distinctData) => {
 const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   data,
   value,
-  btn
+  btn,
+  datacolor
 ) {
   // console.log(data, value, btn);
   switch (value) {
@@ -81,7 +85,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--primary">
-      ${list_HTML(displayFilterIngredients(data))}
+      ${list_HTML(displayFilterIngredients(data), datacolor)}
       </ul>`
       );
 
@@ -92,7 +96,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--success">
-      ${list_HTML(displayFilterAppliance(data))}
+      ${list_HTML(displayFilterAppliance(data), datacolor)}
       </ul>`
       );
       // console.log(button);
@@ -103,7 +107,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--danger">
-      ${list_HTML(displayFilterUstensils(data))}
+      ${list_HTML(displayFilterUstensils(data), datacolor)}
       </ul>`
       );
       break;
@@ -116,7 +120,8 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
   document.querySelectorAll(".filter__select").forEach((button) => {
     let value = button.getAttribute("value");
-    // console.log(data, value, button);
-    hydrateFilter(data, value, button);
+    let datacolor = button.getAttribute("data-color");
+    // console.log(data, value, button, datacolor);
+    hydrateFilter(data, value, button, datacolor);
   });
 });

@@ -17,17 +17,67 @@ export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
 // AFFICHE LES TAGS  ET UPDATE
 tags.showListOfTags(tags.tagsArray);
 
-// // DISPLAY BTN ONCLIKCK
+// ASSURE L'OUVERTURE ET LA FERMETURE DES FILTRES
 let buttons = document.querySelectorAll(".filter__select");
 let buttonValue;
-
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     buttonValue = btn.getAttribute("value");
-    console.log(buttonValue, btn);
-    changeInputTypeInText(btn, buttonValue);
+    // console.log(buttonValue, btn);
+    isFiltersInteractive(btn, buttonValue);
   });
 });
+
+// permet d'ouvrir et de fermer les filtres / btn
+const isFiltersInteractive = (btn, buttonValue) => {
+  // composant liste de mots clés
+  const displayKeyword = btn.nextElementSibling;
+  if (displayKeyword.classList.contains("filter__show")) {
+    closeSelectMenu(
+      // supprime le placeholder, attribue une value, attribue un type button
+      displayKeyword.previousElementSibling,
+      // supprime la class CSS assurant l'affichange
+      displayKeyword,
+      // réduit la largeur du composant
+      displayKeyword.parentNode,
+      // assure la rotation de la flèche vers le haut
+      displayKeyword.parentNode.firstElementChild
+    );
+  } else {
+    // vérifie si les filtres sont ouverts ailleurs pour les fermer
+    isFilterClosed();
+    // ouvre le filtre sélectionné
+    changeInputTypeInText(btn, buttonValue);
+  }
+};
+
+// ferme le menu sélectionné
+const closeSelectMenu = (inputBtn, filterShow, parentWidth, rotateArrow) => {
+  inputBtn.setAttribute("type", "button");
+  inputBtn.setAttribute("value", `${inputBtn.getAttribute("data-value")}`);
+  inputBtn.removeAttribute("placeholder");
+  filterShow.classList.remove("filter__show");
+  parentWidth.style.width = "170px";
+  rotateArrow.classList.remove("filter__custom-arrow--rotate");
+};
+
+// vérifie si les filtres sont ouverts ailleurs pour les fermer
+const isFilterClosed = () => {
+  document.querySelectorAll(".filter__custom-menu").forEach((filter) => {
+    if (filter.classList.contains("filter__show")) {
+      closeSelectMenu(
+        // supprime le placeholder, attribue une value, attribue un type button
+        filter.previousElementSibling,
+        // supprime la class CSS assurant l'affichange
+        filter,
+        // réduit la largeur du composant
+        filter.parentNode,
+        // assure la rotation de la flèche vers le haut
+        filter.parentNode.firstElementChild
+      );
+    }
+  });
+};
 
 const changeInputTypeInText = (button, buttonValue) => {
   button.setAttribute("type", "text");
