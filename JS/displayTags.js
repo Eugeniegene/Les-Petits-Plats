@@ -1,17 +1,22 @@
 // console.log("%c displayTags.js", "color: green; font-weight:bold;");
 
 export let tagsArray = [
-  { title: "Blender", color: "success" },
-  { title: "Cuillère à soupe", color: "danger" },
-  { title: "Sucre", color: "primary" },
+  // { title: "Blender", color: "success" },
+  // { title: "Cuillère à soupe", color: "danger" },
+  // { title: "Sucre", color: "primary" },
 ];
+
+
+
+
+
+
 
 export const tagIsNone = (e) => {
   let ID = parseInt(e.currentTarget.id);
   // console.log(ID);
   tagsArray.splice(ID, 1);
   // console.log(tagsArray);
-
   showListOfTags(tagsArray);
 };
 
@@ -35,4 +40,3 @@ export const showListOfTags = function (arrayOfTags) {
   })();
 };
 
-// push pop des tags

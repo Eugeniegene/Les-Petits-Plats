@@ -36,3 +36,7 @@ console.timeEnd("index.js");
 setTimeout(() => {
   console.clear("this is the first message");
 }, 7000);
+
+// au clic
+// push pop des tags
+// 1 par color si exist
