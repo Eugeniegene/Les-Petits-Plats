@@ -18,14 +18,6 @@ export const listenFilter = (keywordlist) => {
   }
 };
 
-export const tagIsNone = (e) => {
-  let ID = parseInt(e.currentTarget.id);
-  // console.log(ID);
-  tagsArray.splice(ID, 1);
-  // console.log(tagsArray);
-  showListOfTags(tagsArray);
-};
-
 export const showListOfTags = function (arrayOfTags) {
   let tag_HTML = "";
   arrayOfTags.forEach((tag, index) => {
@@ -44,4 +36,12 @@ export const showListOfTags = function (arrayOfTags) {
       x.addEventListener("click", tagIsNone);
     });
   })();
+};
+
+export const tagIsNone = (e) => {
+  let ID = parseInt(e.currentTarget.id);
+  // console.log(ID);
+  tagsArray.splice(ID, 1);
+  // console.log(tagsArray);
+  showListOfTags(tagsArray);
 };
