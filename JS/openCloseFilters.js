@@ -9,7 +9,7 @@ export const isFiltersInteractive =
     // composant liste de mots clés
     const displayKeyword = btn.nextElementSibling;
     if (displayKeyword.classList.contains("filter__show")) {
-      closeSelectMenu(
+      closeSelectFilter(
         // supprime le placeholder, attribue une value, attribue un type button
         displayKeyword.previousElementSibling,
         // supprime la class CSS assurant l'affichange
@@ -28,7 +28,7 @@ export const isFiltersInteractive =
   });
 
 // ferme le menu sélectionné
-const closeSelectMenu = (renderRecipes.prototype.closeSelectMenu = (
+const closeSelectFilter = (renderRecipes.prototype.closeSelectFilter = (
   inputBtn,
   filterShow,
   parentWidth,
@@ -46,10 +46,10 @@ const closeSelectMenu = (renderRecipes.prototype.closeSelectMenu = (
 const isFilterClosed = (renderRecipes.prototype.isFilterClosed = () => {
   document.querySelectorAll(".filter__custom-menu").forEach((filter) => {
     if (filter.classList.contains("filter__show")) {
-      closeSelectMenu(
+      closeSelectFilter(
         // supprime le placeholder, attribue une value, attribue un type button
         filter.previousElementSibling,
-        // supprime la class CSS assurant l'affichange
+        // supprime la class CSS assurant l'affichage
         filter,
         // réduit la largeur du composant
         filter.parentNode,

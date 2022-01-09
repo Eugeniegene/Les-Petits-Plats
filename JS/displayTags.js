@@ -1,16 +1,22 @@
 // console.log("%c displayTags.js", "color: green; font-weight:bold;");
 
 export let tagsArray = [
-  // { title: "Blender", color: "success" },
-  // { title: "Cuillère à soupe", color: "danger" },
-  // { title: "Sucre", color: "primary" },
+  // { title: "", color: "" },
 ];
 
-
-
-
-
-
+export const listenFilter = (keywordlist) => {
+  for (const keyword of keywordlist) {
+    // console.log(keyword);
+    keyword.addEventListener("click", () => {
+      let dataTitle = keyword.textContent;
+      let dataColor = keyword.getAttribute("data-color");
+      let tagObject = { title: `${dataTitle}`, color: `${dataColor}` };
+      // console.log(tagObject);
+      tagsArray.push(tagObject);
+      showListOfTags(tagsArray);
+    });
+  }
+};
 
 export const tagIsNone = (e) => {
   let ID = parseInt(e.currentTarget.id);
@@ -39,4 +45,3 @@ export const showListOfTags = function (arrayOfTags) {
     });
   })();
 };
-
