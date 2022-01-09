@@ -18,7 +18,7 @@
 1. [algoFunc](https://github.com/git504/Les-Petits-Plats/tree/algoFunc) : **programmation fonctionnelle**
 2. [algoLoop](https://github.com/git504/Les-Petits-Plats/tree/algoLoop) : **boucles natives (while, for...)**
 
-- Créer un [une fiche et un schema d’investigation de fonctionnalité](https://github.com/git504/Les-Petits-Plats/tree/main/assets/doc) de l'enchaînement des étapes de chacun des algorithmes selon modèle (Document de comparaison)](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Fiche+d%E2%80%99investigation+fonctionnalite%CC%81.pdf)
+- Créer un [une fiche et un schema d’investigation de fonctionnalité](https://github.com/git504/Les-Petits-Plats/tree/main/assets/doc) de l'enchaînement des étapes de chacun des algorithmes selon modèle [Document de comparaison](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Fiche+d%E2%80%99investigation+fonctionnalite%CC%81.pdf)
 - [Utilisation de l'outil de performances JSBEN.CH
   ](https://jsben.ch/6NSzL)
 - [Validation **W3C** sans erreur](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgit504.github.io%2FLes-Petits-Plats%2F)
