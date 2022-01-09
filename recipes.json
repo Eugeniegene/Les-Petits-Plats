@@ -11,7 +11,7 @@
           "unit": "ml"
         },
         {
-          "ingredient": "Jus de citron",
+          "ingredient": "Jus de citron 🍋",
           "quantity": 2
         },
         {
@@ -56,7 +56,7 @@
           "quantite": 1
         },
         {
-          "ingredient": "Citron Vert",
+          "ingredient": "Citron Vert 🍋",
           "quantity": 5
         },
         {
@@ -66,7 +66,7 @@
         }
       ],
       "time": 60,
-      "description": "Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois-ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur, vous pouvez ajouter 1 à 2 cuillères à soupe de Crème de coco",
+      "description": "Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert 🍋(mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron 🍋cette fois-ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur, vous pouvez ajouter 1 à 2 cuillères à soupe de Crème de coco",
       "appliance": "Saladier",
       "ustensils": ["presse citron"]
     },
@@ -584,7 +584,7 @@
     },
     {
       "id": 17,
-      "name": "Smoothie à la fraise",
+      "name": "Smoothie à la fraise 🥤",
       "servings": 6,
       "ingredients": [
         {
@@ -610,13 +610,13 @@
         }
       ],
       "time": 15,
-      "description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajoutez une cuillère à soupe de juste du citron ainsi que les glaçons. Ajoutez quelques feuilles de menthe pour plus de fraîcheur. Mixez le tout. Servir et déguster",
+      "description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajoutez une cuillère à soupe de juste du citron 🍋 ainsi que les glaçons. Ajoutez quelques feuilles de menthe pour plus de fraîcheur. Mixez le tout. Servir et déguster",
       "appliance": "Blender",
       "ustensils": ["verres", "couteau", "presse citron"]
     },
     {
       "id": 18,
-      "name": "Smoothie ananas et vanille",
+      "name": "Smoothie ananas et vanille 🥤",
       "servings": 5,
       "ingredients": [
         {
@@ -668,7 +668,7 @@
         }
       ],
       "time": 0,
-      "description": "Coupez les fruits en morceaux, ajouter le jus de citron et le lait ainsi que le sucre glace. Mixez. Ajoutez des glaçons si le lait n'a pas été mis au frais",
+      "description": "Coupez les fruits en morceaux, ajouter le jus de citron 🍋 et le lait ainsi que le sucre glace. Mixez. Ajoutez des glaçons si le lait n'a pas été mis au frais",
       "appliance": "Blender",
       "ustensils": ["couteau", "verres", "presse citron"]
     },
@@ -1379,7 +1379,7 @@
           "unit": "Litres"
         },
         {
-          "ingredient": "Citron Vert",
+          "ingredient": "Citron Vert 🍋",
           "quantity": 3
         },
         {
@@ -1481,7 +1481,7 @@
         }
       ],
       "time": 50,
-      "description": "Préchauffez le four à 200°. Étalez la pâte. La mettre dans un moule. Battre les œufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appétit",
+      "description": "Préchauffez le four à 200°. Étalez la pâte. La mettre dans un moule. Battre les œufs avec le sucre. Ajouter le jus de citron 🍋 et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appétit",
       "appliance": "Four",
       "ustensils": ["rouleau à pâtisserie", "moule à tarte", "presse citron"]
     },
@@ -1618,13 +1618,13 @@
         }
       ],
       "time": 5,
-      "description": "Mélanger le jus de citron avec le sucre et le mascarpone. Ajouter la crème fraîche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
+      "description": "Mélanger le jus de citron 🍋 avec le sucre et le mascarpone. Ajouter la crème fraîche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
       "appliance": "Saladier",
       "ustensils": ["fouet", "verres", "cuillère en bois"]
     },
     {
       "id": 48,
-      "name": "Pizza",
+      "name": "Pizza  🍕 ",
       "servings": 4,
       "ingredients": [
         {
@@ -1659,7 +1659,7 @@
     },
     {
       "id": 49,
-      "name": "Smoothie tropical",
+      "name": "Smoothie tropical 🥤",
       "servings": 4,
       "ingredients": [
         {
@@ -1692,7 +1692,7 @@
     },
     {
       "id": 50,
-      "name": "Frangipane",
+      "name": "Frangipane 👑",
       "servings": 2,
       "ingredients": [
         {
