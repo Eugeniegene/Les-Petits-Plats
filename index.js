@@ -3,7 +3,6 @@ console.time("index.js");
 
 import { renderRecipes } from "./JS/api.js";
 import * as cards from "./JS/displayCards.js";
-import * as tags from "./JS/displayTags.js";
 import * as filters from "./JS/displayFilters.js";
 import * as openclosefilters from "./JS/openCloseFilters.js";
 
@@ -27,15 +26,12 @@ buttons.forEach((btn) => {
   });
 });
 
-// AFFICHE LES TAGS
-tags.showListOfTags(tags.tagsArray);
-
-
+// --------------------------------------------------------
 
 // AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
 console.timeEnd("index.js");
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
-// setTimeout(() => {
-//   console.clear("this is the first message");
-// }, 7000);
+setTimeout(() => {
+  console.clear("this is the first message");
+}, 7000);
