@@ -209,9 +209,29 @@ body {
   width: 33%;
   padding: 4px 0 4px 20px;
   font-size: var(--fs-18);
+  /* color: rgb(49, 49, 49); */
   /* text-transform: capitalize; */
 }
 
+.filter__custom-option--enable {
+  width: 33%;
+  padding: 4px 0 4px 20px;
+  font-size: var(--fs-18);
+  color: gray;
+}
+
+.filter__custom-option--enable:hover {
+  cursor: default;
+}
+
+.filter__custom-option--enable::after {
+  content: "";
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: grey;
+  transition: 300ms;
+}
 .filter__custom-option::after {
   content: "";
   width: 0px;

@@ -21,7 +21,7 @@ const displayFilterIngredients =
       ),
     ];
 
-    // console.log(utils.shuffle(distinctIngredients));
+    console.log(utils.shuffle(distinctIngredients));
     return utils.shuffle(distinctIngredients);
   });
 

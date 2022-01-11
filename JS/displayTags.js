@@ -11,9 +11,20 @@ export const listenFilter = (keywordlist) => {
       let dataTitle = keyword.textContent;
       let dataColor = keyword.getAttribute("data-color");
       let tagObject = { title: `${dataTitle}`, color: `${dataColor}` };
-      // console.log(tagObject);
-      tagsArray.push(tagObject);
-      showListOfTags(tagsArray);
+      let verif = false;
+
+      tagsArray.forEach((obj) => {
+        verif = obj.title === tagObject.title;
+      });
+
+      console.log(verif);
+      if (!verif) {
+        keyword.classList.remove("filter__custom-option");
+        keyword.classList.add("filter__custom-option--enable");
+        tagsArray.push(tagObject);
+        showListOfTags(tagsArray);
+        console.log(tagsArray);
+      }
     });
   }
 };
@@ -27,8 +38,8 @@ export const showListOfTags = function (arrayOfTags) {
   <img src="./assets/image/remove-icon.png" alt=""
 /></span>
 </span>`;
+    document.querySelector(".tags").innerHTML = tag_HTML;
   });
-  document.querySelector(".tags").innerHTML = tag_HTML;
 
   // LISTENNER DES TAGS
   const listenToTags = (function () {

@@ -32,6 +32,6 @@ buttons.forEach((btn) => {
 console.timeEnd("index.js");
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
-setTimeout(() => {
-  console.clear("this is the first message");
-}, 7000);
+// setTimeout(() => {
+//   console.clear("this is the first message");
+// }, 7000);
