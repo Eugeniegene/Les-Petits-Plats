@@ -17,13 +17,12 @@ export const listenFilter = (keywordlist) => {
         verif = obj.title === tagObject.title;
       });
 
-      console.log(verif);
+      // console.log(verif);
       if (!verif) {
         keyword.classList.remove("filter__custom-option");
         keyword.classList.add("filter__custom-option--enable");
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
-        console.log(tagsArray);
       }
     });
   }
