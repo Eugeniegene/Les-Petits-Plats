@@ -11,13 +11,14 @@ export const listenFilter = (keywordlist) => {
       let dataTitle = keyword.textContent;
       let dataColor = keyword.getAttribute("data-color");
       let tagObject = { title: `${dataTitle}`, color: `${dataColor}` };
+
+      // VERIFIE SI LE TAG EST PRESENT
       let verif = false;
 
-      tagsArray.forEach((obj) => {
-        verif = obj.title === tagObject.title;
+      tagsArray.forEach((tag) => {
+        verif = tag.title === tagObject.title;
       });
 
-      // console.log(verif);
       if (!verif) {
         keyword.classList.remove("filter__custom-option");
         keyword.classList.add("filter__custom-option--enable");
