@@ -25,6 +25,8 @@ export const listenFilter = (keywordlist) => {
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
       }
+
+      //ici funtion avec datatitle en filter
     });
   }
 };

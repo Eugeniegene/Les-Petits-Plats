@@ -125,6 +125,8 @@ export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
     // console.log(data, value, button, datacolor);
     hydrateFilter(data, value, button, datacolor);
   });
-  // ECOUTE L'ENSEMBLE DES LI (textconstent et color)
+  // ECOUTE L'ENSEMBLE DES LI (textcontent et color)
   listenFilter(document.querySelectorAll(".filter__custom-option"));
 });
+
+

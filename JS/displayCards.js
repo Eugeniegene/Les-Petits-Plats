@@ -5,7 +5,9 @@ import { capitalize } from "./utils.js";
 export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
   recipes
 ) {
-  recipes.map((recipe) => {
+  recipes.forEach((recipe) => {
+    // console.log(recipe);
+
     let listCard_HTML = "";
 
     recipe.ingredients.map((elt) => {

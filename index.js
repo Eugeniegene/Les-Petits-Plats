@@ -5,12 +5,14 @@ import { renderRecipes } from "./JS/api.js";
 import * as cards from "./JS/displayCards.js";
 import * as filters from "./JS/displayFilters.js";
 import * as openclosefilters from "./JS/openCloseFilters.js";
+import * as google from "./JS/google.js";
 
 // RECUPERE LA DATA ET HYDRATE LES COMPOSANTS
 export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
   function (recipes) {
     // console.log(recipes);
     cards.DISPLAY_CARDS(recipes);
+    google.IS_GOOGLE(recipes);
     filters.DISPLAY_FILTERS(recipes);
   });
 
