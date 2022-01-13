@@ -1,0 +1,10 @@
+ERREURS
+
+tags on delete bug
+affichage des cards suite à algo google.func innerHTML
+
+
+RESTE A FAIRE
+
+algo loop
+fiche d'investigation
