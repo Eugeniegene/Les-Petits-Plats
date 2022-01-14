@@ -13,18 +13,12 @@
 - [Respect de la maquette FIGMA](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 - [Implémenter les données de 50 recettes JSON](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
 - [Implémenter la fonctionnalité de recherche en respectant la "Fiche Cas d’utilisation"](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/description%20du%20cas%20d%E2%80%99utilisation%20de%20recherche.pdf)
-- Deux versions d'algorithme différents :
 
-1. [algoFunc](https://github.com/git504/Les-Petits-Plats/tree/algoFunc) : **programmation fonctionnelle**
-2. [algoLoop](https://github.com/git504/Les-Petits-Plats/tree/algoLoop) : **boucles natives (while, for...)**
+1. [**SCHEMA**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schema.html)
+2. [**Feuilles JS**](https://github.com/git504/Les-Petits-Plats/tree/main/assets/schemaAlgo)
+3. [**FICHE** d’investigation de fonctionnalité](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/fiche.pdf) selon [**MODELE**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/Fiche%20d%E2%80%99investigation%20de%20fonctionnalit%C3%A9.pdf)
 
-- Créer un [**SCHEMA** d’investigation de fonctionnalité](https://github.com/git504/Les-Petits-Plats/tree/main/assets/schemaAlgo) de chacun des algorithmes selon [**MODELE**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/Fiche%20d%E2%80%99investigation%20de%20fonctionnalit%C3%A9.pdf)
-
-1. [schema Loop algorithm](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schemaLoop.pdf)
-2. [schema Functional Programming algorithm](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schemaFunc.pdf)
-
-- [Utilisation de l'outil de performances JSBEN.CH
-  ](https://jsben.ch/grajw)
+- [Utilisation de l'outil de performances JSBEN.CH](https://jsben.ch/grajw)
 - [Validation **W3C** sans erreur](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgit504.github.io%2FLes-Petits-Plats%2F)
 
 [Take the elevator up. 🚀](#les-petits-plats-)
