@@ -2,22 +2,6 @@
 
 import * as cards from "./displayCards.js";
 
-export let IS_GOOGLE = (recipes) => {
-  // LISTEN INPUT BARRE DE RECHERCHE
-  const takeIt = document.querySelector(".search__input");
-
-  takeIt.addEventListener("input", () => {
-    if (takeIt.value.length > 2) {
-      //   console.log(takeIt.value);
-      const googledRecipes = theMillTurns(recipes, takeIt.value);
-      console.log(googledRecipes);
-      cards.DISPLAY_CARDS(googledRecipes);
-    }
-
-    //FILTER KEYWORDS DE RECHERCHE
-  });
-};
-
 let theMillTurns = (recipes, filter) => {
   //   console.log(recipes, filter);
   let googledCards = [];
@@ -61,4 +45,24 @@ let theMillTurns = (recipes, filter) => {
   });
   //   console.log(cards);
   return googledCards;
+};
+
+export let IS_GOOGLE = (recipes) => {
+  // LISTEN INPUT BARRE DE RECHERCHE
+  const takeIt = document.querySelector(".search__input");
+
+  takeIt.addEventListener("input", () => {
+    if (takeIt.value.length > 2) {
+      //   console.log(takeIt.value);
+      const googledRecipes = theMillTurns(recipes, takeIt.value);
+      console.log(googledRecipes);
+      cards.DISPLAY_CARDS(googledRecipes);
+    }
+
+    //FILTER KEYWORDS DE RECHERCHE
+    //TAGS BUGS
+    // AFFICHAGE
+    // LOOPBRANCH
+    // FICHE INVESTIGATION
+  });
 };

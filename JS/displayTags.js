@@ -4,6 +4,15 @@ export let tagsArray = [
   // { title: "", color: "" },
 ];
 
+const tagIsNone = (e) => {
+  // console.log(e.currentTarget.id);
+  let ID = e.currentTarget.id;
+  ID = parseInt(ID);
+  tagsArray.splice(ID, 1);
+  // console.log(tagsArray);
+  showListOfTags(tagsArray);
+};
+
 export const listenFilter = (keywordlist) => {
   for (const keyword of keywordlist) {
     // console.log(keyword);
@@ -25,14 +34,13 @@ export const listenFilter = (keywordlist) => {
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
       }
-
-      //ici funtion avec datatitle en filter
     });
   }
 };
 
 export const showListOfTags = function (arrayOfTags) {
   let tag_HTML = "";
+
   arrayOfTags.forEach((tag, index) => {
     tag_HTML += `<span class="tags__item tags__item--${tag.color}">
 <span  class="tags__name">${tag.title}</span>
@@ -40,23 +48,13 @@ export const showListOfTags = function (arrayOfTags) {
   <img src="./assets/image/remove-icon.png" alt=""
 /></span>
 </span>`;
-    document.querySelector(".tags").innerHTML = tag_HTML;
   });
+  document.querySelector(".tags").innerHTML = tag_HTML;
 
   // LISTENNER DES TAGS
   const listenToTags = (function () {
-    document.querySelectorAll(".tags__close").forEach((x) => {
-      x.addEventListener("click", tagIsNone);
+    document.querySelectorAll(".tags__close").forEach((X) => {
+      X.addEventListener("click", tagIsNone);
     });
   })();
-};
-
-export const tagIsNone = (e) => {
-  console.log("ALLOtag");
-
-  let ID = parseInt(e.currentTarget.id);
-  // console.log(ID);
-  tagsArray.splice(ID, 1);
-  // console.log(tagsArray);
-  showListOfTags(tagsArray);
 };

@@ -6,8 +6,10 @@ affichage des cards suite à algo google.func innerHTML
 
 RESTE A FAIRE
 
-algo loop
-fiche d'investigation
+FILTER KEYWORDS DE RECHERCHE
+FICHE INVESTIGATION
+AFFICHAGE
+LOOPBRANCH
 
 
 NOTA Vitesse de performance

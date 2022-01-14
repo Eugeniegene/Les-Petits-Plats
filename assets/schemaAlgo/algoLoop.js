@@ -1808,6 +1808,7 @@ let theMillTurnsLoop = (recipes, filter) => {
     ) {
       googledCards.push(recipe);
       //   console.log(cards);
+      continue;
     }
     // un ustensil ?
     for (let ustensil of recipe.ustensils) {
