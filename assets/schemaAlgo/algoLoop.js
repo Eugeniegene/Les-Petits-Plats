@@ -1795,16 +1795,17 @@ let theMillTurnsLoop = (recipes, filter) => {
     // console.log(recipe);
     if (
       // une recette ?
-      recipe.name.toLowerCase().trim().includes(filter.toLowerCase().trim()) ||
+      recipe.name.toLowerCase().trim().indexOf(filter.toLowerCase().trim()) >
+        -1 ||
       recipe.description
         .toLowerCase()
         .trim()
-        .includes(filter.toLowerCase().trim()) ||
+        .indexOf(filter.toLowerCase().trim()) > -1 ||
       // un appareil ?
       recipe.appliance
         .toLowerCase()
         .trim()
-        .includes(filter.toLowerCase().trim())
+        .indexOf(filter.toLowerCase().trim()) > -1
     ) {
       googledCards.push(recipe);
       //   console.log(cards);
@@ -1812,7 +1813,9 @@ let theMillTurnsLoop = (recipes, filter) => {
     }
     // un ustensil ?
     for (let ustensil of recipe.ustensils) {
-      if (ustensil.toLowerCase().trim().indexOf(filter) > -1) {
+      if (
+        ustensil.toLowerCase().trim().indexOf(filter.toLowerCase().trim()) > -1
+      ) {
         googledCards.push(recipe);
         break;
       }
@@ -1820,7 +1823,12 @@ let theMillTurnsLoop = (recipes, filter) => {
 
     // un ingredient ?
     for (let ingredient of recipe.ingredients) {
-      if (ingredient.ingredient.toLowerCase().trim().indexOf(filter) > -1) {
+      if (
+        ingredient.ingredient
+          .toLowerCase()
+          .trim()
+          .indexOf(filter.toLowerCase().trim()) > -1
+      ) {
         googledCards.push(recipe);
         break;
       }
