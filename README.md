@@ -24,5 +24,5 @@
 2. [schema Functional Programming algorithm](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schemaFunc.pdf)
 
 - [Utilisation de l'outil de performances JSBEN.CH
-  ](https://jsben.ch/6NSzL)
+  ](https://jsben.ch/lEe5o)
 - [Validation **W3C** sans erreur](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgit504.github.io%2FLes-Petits-Plats%2F)

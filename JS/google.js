@@ -3,8 +3,9 @@
 import * as cards from "./displayCards.js";
 
 export let IS_GOOGLE = (recipes) => {
-  // LISTEN INPUT
+  // LISTEN INPUT BARRE DE RECHERCHE
   const takeIt = document.querySelector(".search__input");
+
   takeIt.addEventListener("input", () => {
     if (takeIt.value.length > 2) {
       //   console.log(takeIt.value);
@@ -12,6 +13,8 @@ export let IS_GOOGLE = (recipes) => {
       console.log(googledRecipes);
       cards.DISPLAY_CARDS(googledRecipes);
     }
+
+    //FILTER KEYWORDS DE RECHERCHE
   });
 };
 

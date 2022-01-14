@@ -52,6 +52,8 @@ export const showListOfTags = function (arrayOfTags) {
 };
 
 export const tagIsNone = (e) => {
+  console.log("ALLOtag");
+
   let ID = parseInt(e.currentTarget.id);
   // console.log(ID);
   tagsArray.splice(ID, 1);
