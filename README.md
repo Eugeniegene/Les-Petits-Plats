@@ -1,6 +1,9 @@
 # Les-Petits-Plats 👨‍🍳
 
 ![Logo](/assets/image/logo.png)
+<a name="Les-Petits-Plats"></a>
+
+Source: https://prograide.com/pregunta/5868/comment-creer-un-lien-vers-une-ancre-nommee-dans-multimarkdown
 
 ## Développez un algorithme de recherche en JavaScript
 
@@ -27,4 +30,4 @@
   ](https://jsben.ch/grajw)
 - [Validation **W3C** sans erreur](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgit504.github.io%2FLes-Petits-Plats%2F)
 
-[Elevator](#Les-Petits-Plats)
+[Elevator](#les-petits-plats-)
