@@ -1,15 +1,11 @@
-ERREURS
-
-tags on delete bug
-affichage des cards suite à algo google.func innerHTML
-
-
 RESTE A FAIRE
 
-FILTER KEYWORDS DE RECHERCHE
 FICHE INVESTIGATION
-AFFICHAGE
-LOOPBRANCH
+
+DATA ++
+AFFICHAGE LI FILTRE ?
+AFFICHAGE CARDS ?
+LOOPBRANCH push
 
 
 NOTA Vitesse de performance

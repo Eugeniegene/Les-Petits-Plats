@@ -1,19 +1,23 @@
 // console.log("%c displayTags.js", "color: green; font-weight:bold;");
 
+import * as cards from "./displayCards.js";
+import * as filters from "./displayFilters.js";
+import { theMillTurns } from "./google.js";
+
 export let tagsArray = [
   // { title: "", color: "" },
 ];
 
 const tagIsNone = (e) => {
-  // console.log(e.currentTarget.id);
   let ID = e.currentTarget.id;
+  // console.log(ID);
   ID = parseInt(ID);
   tagsArray.splice(ID, 1);
   // console.log(tagsArray);
   showListOfTags(tagsArray);
 };
 
-export const listenFilter = (keywordlist) => {
+export const listenFilter = (data, keywordlist) => {
   for (const keyword of keywordlist) {
     // console.log(keyword);
     keyword.addEventListener("click", () => {
@@ -29,10 +33,17 @@ export const listenFilter = (keywordlist) => {
       });
 
       if (!verif) {
+        // le mot de la lite est grisé
         keyword.classList.remove("filter__custom-option");
         keyword.classList.add("filter__custom-option--enable");
+        // le mot de la liste devient un tag affiché
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
+        // la value devient filtre et affichage des recipes
+        const filteredRecipes = theMillTurns(data, tagObject.title);
+        console.log(filteredRecipes);
+        cards.DISPLAY_CARDS(filteredRecipes);
+        filters.DISPLAY_FILTERS(filteredRecipes);
       }
     });
   }

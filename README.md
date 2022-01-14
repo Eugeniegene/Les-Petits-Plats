@@ -1,4 +1,4 @@
-# Les-Petits-Plats
+# Les-Petits-Plats 👨‍🍳
 
 ![Logo](/assets/image/logo.png)
 
@@ -26,3 +26,5 @@
 - [Utilisation de l'outil de performances JSBEN.CH
   ](https://jsben.ch/grajw)
 - [Validation **W3C** sans erreur](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgit504.github.io%2FLes-Petits-Plats%2F)
+
+[Elevator](#Les-Petits-Plats)

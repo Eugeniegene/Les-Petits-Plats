@@ -1,8 +1,9 @@
 // console.log("%c google.js", "color: green; font-weight:bold;");
 
 import * as cards from "./displayCards.js";
+import * as filters from "./displayFilters.js";
 
-let theMillTurns = (recipes, filter) => {
+export let theMillTurns = (recipes, filter) => {
   //   console.log(recipes, filter);
   let googledCards = [];
 
@@ -55,14 +56,9 @@ export let IS_GOOGLE = (recipes) => {
     if (takeIt.value.length > 2) {
       //   console.log(takeIt.value);
       const googledRecipes = theMillTurns(recipes, takeIt.value);
-      console.log(googledRecipes);
+      //   console.log(googledRecipes);
       cards.DISPLAY_CARDS(googledRecipes);
+      filters.DISPLAY_FILTERS(googledRecipes);
     }
-
-    //FILTER KEYWORDS DE RECHERCHE
-    //TAGS BUGS
-    // AFFICHAGE
-    // LOOPBRANCH
-    // FICHE INVESTIGATION
   });
 };

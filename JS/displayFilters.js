@@ -79,6 +79,7 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   btn,
   datacolor
 ) {
+  // console.log(data);
   // console.log(data, value, btn);
   switch (value) {
     case "Ingrédients":
@@ -126,7 +127,5 @@ export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
     hydrateFilter(data, value, button, datacolor);
   });
   // ECOUTE L'ENSEMBLE DES LI (textcontent et color)
-  listenFilter(document.querySelectorAll(".filter__custom-option"));
+  listenFilter(data, document.querySelectorAll(".filter__custom-option"));
 });
-
-
