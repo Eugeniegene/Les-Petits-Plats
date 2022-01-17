@@ -1,15 +1,16 @@
 RESTE A FAIRE
 
-SANS RECETTES
+SANS RECETTES function
+2 pointers while
+
+
+
+
 
 affichage ?
-DATA ++
+DATA ++ []
 AFFICHAGE LI FILTRE
 AFFICHAGE CARDS
 LOOPBRANCH push
 
-
-NOTA Vitesse de performance
-
-La methode map() pour modifier, alterner ou utiliser les données, est préférable car elle renvoie un nouveau tableau avec les données transformées.
 
