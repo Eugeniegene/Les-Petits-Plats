@@ -26,8 +26,10 @@ export let theMillTurns = (recipes, filter) => {
       //   console.log(cards);
     }
     // un ustensil ?
-    recipe.ustensils.map((ustensil) => {
-      if (ustensil.toLowerCase().trim().includes(filter.toLowerCase().trim())) {
+    recipe.ustensils.filter((elt) => {
+      //   console.log(elt, filter);
+      if (elt.toLowerCase().includes(filter.toLowerCase())) {
+        // console.log(recipe);
         googledCards.push(recipe);
       }
     });
@@ -44,7 +46,7 @@ export let theMillTurns = (recipes, filter) => {
       }
     });
   });
-  //   console.log(cards);
+  console.log(googledCards);
   return googledCards;
 };
 
@@ -62,3 +64,5 @@ export let IS_GOOGLE = (recipes) => {
     }
   });
 };
+
+// POUR CHAQUE INPUT

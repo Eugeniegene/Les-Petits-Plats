@@ -5,6 +5,27 @@ import { capitalize } from "./utils.js";
 export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
   recipes
 ) {
+  const cards = document.querySelector(".cards");
+  cards.innerHTML = "";
+  if (recipes == 0 && !document.querySelector(".cards__no-recipes")) {
+    return cards.insertAdjacentHTML(
+      "beforebegin",
+      `
+  <div class="cards__no-recipes">
+      <div class="cards__no-recipes-image">
+          <img class="cards__no-recipes-logo" src="../assets/image/icone.svg" alt="">
+          <img class="cards__no-recipes-circle" src="../assets/image/forbidden.svg" alt="">
+      </div>
+      <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… </p>
+  </div>
+  `
+    );
+  } else {
+    // to remove the message
+    if (document.querySelector(".cards__no-recipes") && recipes != 0) {
+      document.querySelector(".cards__no-recipes").remove();
+    }
+  }
   recipes.forEach((recipe) => {
     // console.log(recipe);
 
