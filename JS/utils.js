@@ -47,3 +47,30 @@ export const tagIsNoneDanger = () => {
 export const tagIsNonePrimary = () => {
   document.getElementsByClassName("tags__item--primary").style.display = "none";
 };
+
+// AUCUNE RECETTE NE CORRESPOND A LA RECHERCHE.
+export const ifNoRecipes = () => {
+  const cards = document.querySelector(".cards");
+  cards.innerHTML = "";
+
+  if (recipes == 0 && !document.querySelector(".cards__no-recipes")) {
+    return cards.insertAdjacentHTML(
+      "beforebegin",
+      `
+  <div class="cards__no-recipes">
+      <div class="cards__no-recipes-image">
+          <img class="cards__no-recipes-logo" src="./public/images/no_recipes.svg" alt="">
+          <img class="cards__no-recipes-circle" src="./public/images/forbidden.svg" alt="">
+      </div>
+      <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… vous pouvez
+      chercher « limonade de Coco », « thon », etc.</p>
+  </div>
+  `
+    );
+  } else {
+    // to remove the message
+    if (document.querySelector(".cards__no-recipes") && recipes != 0) {
+      document.querySelector(".cards__no-recipes").remove();
+    }
+  }
+};
