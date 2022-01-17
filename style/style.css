@@ -285,8 +285,8 @@ body {
 }
 .cards__no-recipes-logo {
   position: absolute;
-  top: 15%;
-  left: 15%;
+  top: 25%;
+  left: 50%;
 }
 .cards__no-recipes-text {
   font-weight: bold;
