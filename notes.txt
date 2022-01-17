@@ -3,14 +3,13 @@ RESTE A FAIRE
 SANS RECETTES function
 2 pointers while
 
-
-
-
-
 affichage ?
-DATA ++ []
+DATA ++ [] ou filter() ?
 AFFICHAGE LI FILTRE
 AFFICHAGE CARDS
+
+
+
 LOOPBRANCH push
 
 
