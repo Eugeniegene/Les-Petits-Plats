@@ -14,7 +14,7 @@
 - [Implémenter les données de 50 recettes JSON](https://github.com/git504/Les-Petits-Plats/blob/main/recipes.json)
 - [Implémenter la fonctionnalité de recherche en respectant la "Fiche Cas d’utilisation"](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/description%20du%20cas%20d%E2%80%99utilisation%20de%20recherche.pdf)
 
-1. [**SCHEMA**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schema.html)
+1. [**SCHEMA**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/schema.pdf)
 2. [**Feuilles JS**](https://github.com/git504/Les-Petits-Plats/tree/main/assets/schemaAlgo)
 3. [**FICHE** d’investigation de fonctionnalité](https://github.com/git504/Les-Petits-Plats/blob/main/assets/schemaAlgo/fiche.pdf) selon [**MODELE**](https://github.com/git504/Les-Petits-Plats/blob/main/assets/doc/Fiche%20d%E2%80%99investigation%20de%20fonctionnalit%C3%A9.pdf)
 
