@@ -50,8 +50,8 @@ export let theMillTurns = (recipes, filter) => {
   return googledCards;
 };
 
+// LISTEN INPUT BARRE DE RECHERCHE
 export let IS_GOOGLE = (recipes) => {
-  // LISTEN INPUT BARRE DE RECHERCHE
   const takeIt = document.querySelector(".search__input");
 
   takeIt.addEventListener("input", () => {
@@ -66,3 +66,19 @@ export let IS_GOOGLE = (recipes) => {
 };
 
 // POUR CHAQUE INPUT
+export let IS_TAGGED = (recipes) => {
+  // LISTEN INPUT BARRE DE RECHERCHE DU FILTRE
+  const takeFilter = document.querySelectorAll(".filter__select");
+
+  takeFilter.forEach((input) => {
+    input.addEventListener("input", () => {
+      if (takeFilter.value.length > 2) {
+        //   console.log(takeFilter.value);
+        const googledRecipes = theMillTurns(recipes, takeFilter.value);
+        //   console.log(googledRecipes);
+        cards.DISPLAY_CARDS(googledRecipes);
+        filters.DISPLAY_FILTERS(googledRecipes);
+      }
+    });
+  });
+};

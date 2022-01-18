@@ -14,6 +14,7 @@ export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
     cards.DISPLAY_CARDS(recipes);
     filters.DISPLAY_FILTERS(recipes);
     google.IS_GOOGLE(recipes);
+    google.IS_TAGGED(recipes);
   });
 
 // ASSURE L'OUVERTURE ET LA FERMETURE DES FILTRES
