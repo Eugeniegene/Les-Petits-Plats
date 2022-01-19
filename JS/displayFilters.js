@@ -95,7 +95,6 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
       break;
     case "Appareil":
       btn.innerHTML = "";
-
       btn.insertAdjacentHTML(
         "afterend",
         `
@@ -108,7 +107,6 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
       break;
     case "Ustensiles":
       btn.innerHTML = "";
-
       btn.insertAdjacentHTML(
         "afterend",
         `

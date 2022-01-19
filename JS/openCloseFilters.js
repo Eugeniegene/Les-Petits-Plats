@@ -70,18 +70,15 @@ export const isFilterReload = (renderRecipes.prototype.isFilterClosed = (
       let btn = filter.previousElementSibling;
       let btnvalue = btn.getAttribute("value");
       // console.log(btn, btnvalue);
-      closeSelectFilter(
-        // supprime le placeholder, attribue une value, attribue un type button
-        filter.previousElementSibling,
-        // supprime la class CSS assurant l'affichage
-        filter,
-        // réduit la largeur du composant
-        filter.parentNode,
-        // assure la rotation de la flèche vers le haut
-        filter.parentNode.firstElementChild
-      );
-      filter.parentElement.removeChild(filter.parentElement.lastElementChild);
+
+      // SUPPRESSION DES PRECEDENTES UL CONTENANT LES LI
+      document.querySelectorAll(".filter__custom-menu").forEach((ul) => {
+        // console.log(ul);
+        ul.remove();
+      });
+      // HYDRATE LES LI AVEC LA NOUVELLE RECHERCHE
       filters.DISPLAY_FILTERS(data);
+      // OUVRE A NOUVEAU L'INPUT EN MODE TEXTE
       changeInputTypeInText(btn, btnvalue);
     }
   });

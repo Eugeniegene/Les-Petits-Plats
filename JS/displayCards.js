@@ -33,8 +33,10 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
         elt.unit ? elt.unit.toLowerCase().trim() : ""
       }
          </li>`;
+
       return listCard_HTML;
     });
+
     document.querySelector(".cards").insertAdjacentHTML(
       "afterbegin",
       `<article class="card">
