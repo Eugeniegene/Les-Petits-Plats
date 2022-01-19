@@ -2,6 +2,8 @@
 
 import * as cards from "./displayCards.js";
 import * as filters from "./displayFilters.js";
+import { showListOfTags } from "./displayTags.js";
+import { isFilterReload } from "./openCloseFilters.js";
 
 export let theMillTurns = (recipes, filter) => {
   //   console.log(recipes, filter);
@@ -65,7 +67,15 @@ export let IS_GOOGLE = (recipes) => {
     } else {
       // SINON TABLEAU DES RECETTES
       cards.DISPLAY_CARDS(recipes);
-      filters.DISPLAY_FILTERS(recipes);
+      isFilterReload(recipes);
+      let tagsArray = [];
+      showListOfTags(tagsArray);
+
+      document.querySelectorAll(".filter__custom-option").forEach((li) => {
+        li.classList.contains("filter__custom-option--enable") == true
+          ? li.classList.add("filter__custom-option")
+          : "";
+      });
     }
   });
 };
