@@ -1,11 +1,12 @@
 // console.log("%c displayTags.js", "color: green; font-weight:bold;");
 
 import * as cards from "./displayCards.js";
-import * as filters from "./displayFilters.js";
 import { theMillTurns } from "./google.js";
 import { isFilterReload } from "./openCloseFilters.js";
 
-export let tagsArray = [
+var filteredRecipes = "";
+
+export var tagsArray = [
   // { title: "", color: "" },
 ];
 
@@ -34,17 +35,26 @@ export const listenFilter = (data, keywordlist) => {
       });
 
       if (!verif) {
+        console.log(tagsArray.length);
         // la value devient filtre et affichage des recipes
-        const filteredRecipes = theMillTurns(data, tagObject.title);
-        isFilterReload(filteredRecipes);
-        cards.DISPLAY_CARDS(filteredRecipes);
+        if (tagsArray.length === 0) {
+          filteredRecipes = theMillTurns(data, tagObject.title);
+          isFilterReload(filteredRecipes);
+          cards.DISPLAY_CARDS(filteredRecipes);
+        } else if (tagsArray.length >= 1) {
+          filteredRecipes = theMillTurns(filteredRecipes, tagObject.title);
+          console.log(filteredRecipes);
+          isFilterReload(filteredRecipes);
+          cards.DISPLAY_CARDS(filteredRecipes);
+        }
+
         // le mot de la liste devient un tag affiché
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
+        //   les keywords présents de la liste sont grisé
         tagsArray.forEach((tag) => {
           document.querySelectorAll(".filter__custom-option").forEach((li) => {
-            if (li.textContent === tag.title) {
-              //   les keywords présents de la liste sont grisé
+            if (tag.title.includes(li.textContent)) {
               li.classList.remove("filter__custom-option");
               li.classList.add("filter__custom-option--enable");
             }

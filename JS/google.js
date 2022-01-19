@@ -2,7 +2,7 @@
 
 import * as cards from "./displayCards.js";
 import * as filters from "./displayFilters.js";
-import { showListOfTags } from "./displayTags.js";
+import { showListOfTags, tagsArray } from "./displayTags.js";
 import { isFilterReload } from "./openCloseFilters.js";
 
 export let theMillTurns = (recipes, filter) => {
@@ -44,6 +44,8 @@ export let theMillTurns = (recipes, filter) => {
           .trim()
           .includes(filter.toLowerCase().trim())
       ) {
+        // console.log(recipe);
+
         googledCards.push(recipe);
       }
     });
@@ -68,7 +70,12 @@ export let IS_GOOGLE = (recipes) => {
       // SINON TABLEAU DES RECETTES
       cards.DISPLAY_CARDS(recipes);
       isFilterReload(recipes);
-      let tagsArray = [];
+      // ON VIDE LE TABLEAY DEStags
+      // console.log(tagsArray);
+      while (tagsArray.length > 0) {
+        tagsArray.pop();
+      }
+      // console.log(tagsArray);
       showListOfTags(tagsArray);
 
       document.querySelectorAll(".filter__custom-option").forEach((li) => {
