@@ -29,7 +29,7 @@ export const listenFilter = (data, keywordlist) => {
       let verif = false;
 
       tagsArray.forEach((tag) => {
-        console.log(tag);
+        // console.log(tag);
         verif = tag.title === tagObject.title;
       });
 

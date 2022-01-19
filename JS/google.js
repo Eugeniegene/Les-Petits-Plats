@@ -55,12 +55,17 @@ export let IS_GOOGLE = (recipes) => {
   const takeIt = document.querySelector(".search__input");
 
   takeIt.addEventListener("input", () => {
+    // si le nbre de lettre dépasse 2 alors :  LANCER ALGO
     if (takeIt.value.length > 2) {
       //   console.log(takeIt.value);
       const googledRecipes = theMillTurns(recipes, takeIt.value);
       //   console.log(googledRecipes);
       cards.DISPLAY_CARDS(googledRecipes);
       filters.DISPLAY_FILTERS(googledRecipes);
+    } else {
+      // SINON TABLEAU DES RECETTES
+      cards.DISPLAY_CARDS(recipes);
+      filters.DISPLAY_FILTERS(recipes);
     }
   });
 };
