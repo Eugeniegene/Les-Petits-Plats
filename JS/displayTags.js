@@ -3,6 +3,7 @@
 import * as cards from "./displayCards.js";
 import * as filters from "./displayFilters.js";
 import { theMillTurns } from "./google.js";
+import { isFilterReload } from "./openCloseFilters.js";
 
 export let tagsArray = [
   // { title: "", color: "" },
@@ -19,31 +20,36 @@ const tagIsNone = (e) => {
 
 export const listenFilter = (data, keywordlist) => {
   for (const keyword of keywordlist) {
-    // console.log(keyword);
     keyword.addEventListener("click", () => {
       let dataTitle = keyword.textContent;
       let dataColor = keyword.getAttribute("data-color");
       let tagObject = { title: `${dataTitle}`, color: `${dataColor}` };
 
-      // VERIFIE SI LE TAG EST PRESENT
+      // VERIFIE SI LE TAG EST PRESENT pour éviter doublons OU lancer algo
       let verif = false;
 
       tagsArray.forEach((tag) => {
+        console.log(tag);
         verif = tag.title === tagObject.title;
       });
 
       if (!verif) {
-        // le mot de la lite est grisé
-        keyword.classList.remove("filter__custom-option");
-        keyword.classList.add("filter__custom-option--enable");
+        // la value devient filtre et affichage des recipes
+        const filteredRecipes = theMillTurns(data, tagObject.title);
+        isFilterReload(filteredRecipes);
+        cards.DISPLAY_CARDS(filteredRecipes);
         // le mot de la liste devient un tag affiché
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
-        // la value devient filtre et affichage des recipes
-        const filteredRecipes = theMillTurns(data, tagObject.title);
-        console.log(filteredRecipes);
-        cards.DISPLAY_CARDS(filteredRecipes);
-        filters.DISPLAY_FILTERS(filteredRecipes);
+        tagsArray.forEach((tag) => {
+          document.querySelectorAll(".filter__custom-option").forEach((li) => {
+            if (li.textContent === tag.title) {
+              //   les keywords présents de la liste sont grisé
+              li.classList.remove("filter__custom-option");
+              li.classList.add("filter__custom-option--enable");
+            }
+          });
+        });
       }
     });
   }

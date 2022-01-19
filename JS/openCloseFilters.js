@@ -1,6 +1,7 @@
 // console.log("%c openCloseFilters.js", "color: green; font-weight:bold;");
 
 import { renderRecipes } from "./api.js";
+import * as filters from "./displayFilters.js";
 
 // fonction globale
 // permet d'ouvrir et de fermer les filtres / btn
@@ -28,7 +29,7 @@ export const isFiltersInteractive =
   });
 
 // ferme le menu sélectionné
-const closeSelectFilter = (renderRecipes.prototype.closeSelectFilter = (
+export const closeSelectFilter = (renderRecipes.prototype.closeSelectFilter = (
   inputBtn,
   filterShow,
   parentWidth,
@@ -43,7 +44,7 @@ const closeSelectFilter = (renderRecipes.prototype.closeSelectFilter = (
 });
 
 // vérifie si les filtres sont ouverts ailleurs pour les fermer
-const isFilterClosed = (renderRecipes.prototype.isFilterClosed = () => {
+export const isFilterClosed = (renderRecipes.prototype.isFilterClosed = () => {
   document.querySelectorAll(".filter__custom-menu").forEach((filter) => {
     if (filter.classList.contains("filter__show")) {
       closeSelectFilter(
@@ -60,13 +61,40 @@ const isFilterClosed = (renderRecipes.prototype.isFilterClosed = () => {
   });
 });
 
+// FERME LE FILTRE ET CHARGE NOUVEAUX ELEMENTS
+export const isFilterReload = (renderRecipes.prototype.isFilterClosed = (
+  data
+) => {
+  document.querySelectorAll(".filter__custom-menu").forEach((filter) => {
+    if (filter.classList.contains("filter__show")) {
+      let btn = filter.previousElementSibling;
+      let btnvalue = btn.getAttribute("value");
+      // console.log(btn, btnvalue);
+      closeSelectFilter(
+        // supprime le placeholder, attribue une value, attribue un type button
+        filter.previousElementSibling,
+        // supprime la class CSS assurant l'affichage
+        filter,
+        // réduit la largeur du composant
+        filter.parentNode,
+        // assure la rotation de la flèche vers le haut
+        filter.parentNode.firstElementChild
+      );
+      filter.parentElement.removeChild(filter.parentElement.lastElementChild);
+      filters.DISPLAY_FILTERS(data);
+      changeInputTypeInText(btn, btnvalue);
+    }
+  });
+});
+
 const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
   button,
   buttonValue
 ) => {
   button.setAttribute("type", "text");
   button.setAttribute("data-value", `${buttonValue}`);
-  button.removeAttribute("value");
+  // button.removeAttribute("value");
+  button.value = "";
 
   switch (buttonValue) {
     case "Appareil":
@@ -80,6 +108,7 @@ const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
       button.previousElementSibling.classList.add(
         "filter__custom-arrow--rotate"
       );
+
       break;
     case "Ingrédients":
       button.parentNode.style.width = "66%";
@@ -88,6 +117,7 @@ const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
       button.previousElementSibling.classList.add(
         "filter__custom-arrow--rotate"
       );
+
       break;
     case "Ustensiles":
       button.parentNode.style.width = "66%";
@@ -96,6 +126,7 @@ const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
       button.previousElementSibling.classList.add(
         "filter__custom-arrow--rotate"
       );
+
       break;
     default:
       break;

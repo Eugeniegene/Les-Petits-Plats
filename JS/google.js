@@ -65,17 +65,17 @@ export let IS_GOOGLE = (recipes) => {
   });
 };
 
-// POUR CHAQUE INPUT
+// LISTEN FOREACH INPUT FILTER
 export let IS_TAGGED = (recipes) => {
   // LISTEN INPUT BARRE DE RECHERCHE DU FILTRE
   const takeFilter = document.querySelectorAll(".filter__select");
 
   takeFilter.forEach((input) => {
     input.addEventListener("input", () => {
-      if (takeFilter.value.length > 2) {
+      if (input.value.length > 2) {
         //   console.log(takeFilter.value);
-        const googledRecipes = theMillTurns(recipes, takeFilter.value);
-        //   console.log(googledRecipes);
+        const googledRecipes = theMillTurns(recipes, input.value);
+        // console.log(googledRecipes);
         cards.DISPLAY_CARDS(googledRecipes);
         filters.DISPLAY_FILTERS(googledRecipes);
       }

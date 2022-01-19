@@ -79,10 +79,11 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   btn,
   datacolor
 ) {
-  // console.log(data);
+  // console.log(value);
   // console.log(data, value, btn);
   switch (value) {
     case "Ingrédients":
+      btn.innerHTML = "";
       btn.insertAdjacentHTML(
         "afterend",
         `
@@ -90,10 +91,11 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
       ${list_HTML(displayFilterIngredients(data), datacolor)}
       </ul>`
       );
-
       // console.log(data);
       break;
     case "Appareil":
+      btn.innerHTML = "";
+
       btn.insertAdjacentHTML(
         "afterend",
         `
@@ -101,10 +103,12 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
       ${list_HTML(displayFilterAppliance(data), datacolor)}
       </ul>`
       );
+
       // console.log(button);
       break;
     case "Ustensiles":
-      //inserer au bon endroit
+      btn.innerHTML = "";
+
       btn.insertAdjacentHTML(
         "afterend",
         `
@@ -122,7 +126,9 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
   document.querySelectorAll(".filter__select").forEach((button) => {
     let value = button.getAttribute("value");
+    // console.log(value, button);
     let datacolor = button.getAttribute("data-color");
+
     // console.log(data, value, button, datacolor);
     hydrateFilter(data, value, button, datacolor);
   });
