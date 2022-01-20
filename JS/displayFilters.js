@@ -7,7 +7,8 @@ import { listenFilter } from "./displayTags.js";
 // NEW SET : distinct INGREDIENTS
 export const displayFilterIngredients =
   (renderRecipes.prototype.displayFilterIngredients = function (data, filter) {
-    // console.log(data);
+    // console.log(filter);
+
     const distinctIngredients = [
       ...new Set(
         data
@@ -17,17 +18,28 @@ export const displayFilterIngredients =
             )
           )
           .flat()
-        // .sort()
+          .sort()
       ),
     ];
 
-    // console.log(utils.shuffle(distinctIngredients));
-    return utils.shuffle(distinctIngredients);
+    // SI RECHERCHE DANS INPUT....
+    if (filter) {
+      // console.log(
+      //   distinctIngredients.filter((ingredient) =>
+      //     ingredient.includes(filter.toLowerCase().trim())
+      //   )
+      // );
+      return distinctIngredients.filter((ingredient) =>
+        ingredient.includes(filter.toLowerCase().trim())
+      );
+    }
+    // SANS RECHERCHE
+    return distinctIngredients;
   });
 
 // NEW SET : distinct APPLIANCE
-export const displayFilterAppliance = (renderRecipes.prototype.displayFilterAppliance =
-  function (data, filter) {
+export const displayFilterAppliance =
+  (renderRecipes.prototype.displayFilterAppliance = function (data, filter) {
     // console.log(data);
     const distinctAppliance = [
       ...new Set(
@@ -35,13 +47,20 @@ export const displayFilterAppliance = (renderRecipes.prototype.displayFilterAppl
       ),
     ];
 
+    // SI RECHERCHE DANS INPUT....
+    if (filter) {
+      return distinctAppliance.filter((appliance) =>
+        appliance.includes(filter.toLowerCase().trim())
+      );
+    }
+    // SANS RECHERCHE
     // console.log(distinctAppliance);
     return distinctAppliance;
   });
 
 // NEW SET : distinct USTENSILS
-export const displayFilterUstensils = (renderRecipes.prototype.displayFilterUstensils =
-  function (data, filter) {
+export const displayFilterUstensils =
+  (renderRecipes.prototype.displayFilterUstensils = function (data, filter) {
     // console.log(data);
     const distinctUstensils = [
       ...new Set(
@@ -53,7 +72,13 @@ export const displayFilterUstensils = (renderRecipes.prototype.displayFilterUste
           .sort()
       ),
     ];
-    // console.log(distinctUstensils);
+    // SI RECHERCHE DANS INPUT....
+    if (filter) {
+      return distinctUstensils.filter((ustensil) =>
+        ustensil.includes(filter.toLowerCase().trim())
+      );
+    }
+    // SANS RECHERCHE
     return distinctUstensils;
   });
 
@@ -62,56 +87,53 @@ const list_HTML = (renderRecipes.prototype.getList_HTML = (
   distinctData,
   datacolor
 ) => {
+  // console.log(distinctData, datacolor);
   let li_HTML = "";
   distinctData.map((setLi) => {
     li_HTML += `<li class="filter__custom-option" data-color="${datacolor}">${utils.capitalize(
       setLi
     )}</li>`;
   });
-  //   console.log(li_HTML);
+  // console.log(li_HTML);
   return li_HTML;
 });
 
 // TEST CONDITIONNEL POUR ROUTER HTML
-const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
+export const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   data,
   value,
   btn,
-  datacolor
+  datacolor,
+  filter
 ) {
   // console.log(value);
   // console.log(data, value, btn);
   switch (value) {
     case "Ingrédients":
-      btn.innerHTML = "";
+      // console.log(data, filter);
       btn.insertAdjacentHTML(
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--primary">
-      ${list_HTML(displayFilterIngredients(data), datacolor)}
+      ${list_HTML(displayFilterIngredients(data, filter), datacolor)}
       </ul>`
       );
-      // console.log(data);
       break;
     case "Appareil":
-      btn.innerHTML = "";
       btn.insertAdjacentHTML(
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--success">
-      ${list_HTML(displayFilterAppliance(data), datacolor)}
+      ${list_HTML(displayFilterAppliance(data, filter), datacolor)}
       </ul>`
       );
-
-      // console.log(button);
       break;
     case "Ustensiles":
-      btn.innerHTML = "";
       btn.insertAdjacentHTML(
         "afterend",
         `
         <ul class="filter__custom-menu filter__custom-menu--danger">
-      ${list_HTML(displayFilterUstensils(data), datacolor)}
+      ${list_HTML(displayFilterUstensils(data, filter), datacolor)}
       </ul>`
       );
       break;
@@ -121,15 +143,27 @@ const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
 });
 
 // FONCTION GLOBALE
-export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (data) {
-  document.querySelectorAll(".filter__select").forEach((button) => {
-    let value = button.getAttribute("value");
-    // console.log(value, button);
-    let datacolor = button.getAttribute("data-color");
+export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (
+  data,
+  btn,
+  filter,
+  value,
+  color
+) {
+  if (btn && filter && value && color) {
+    // console.log(data, btn, filter, value, color);
+    hydrateFilter(data, value, btn, color, filter);
+  } else {
+    document.querySelectorAll(".filter__select").forEach((button) => {
+      let value = button.getAttribute("value");
+      // console.log(value, button);
+      let datacolor = button.getAttribute("data-color");
 
-    // console.log(data, value, button, datacolor);
-    hydrateFilter(data, value, button, datacolor);
-  });
+      // console.log(data, value, button, datacolor);
+      hydrateFilter(data, value, button, datacolor);
+    });
+  }
+
   // ECOUTE L'ENSEMBLE DES LI (textcontent et color)
   listenFilter(data, document.querySelectorAll(".filter__custom-option"));
 });

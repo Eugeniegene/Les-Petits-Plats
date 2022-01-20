@@ -84,7 +84,7 @@ export const isFilterReload = (renderRecipes.prototype.isFilterClosed = (
   });
 });
 
-const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
+export const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
   button,
   buttonValue
 ) => {

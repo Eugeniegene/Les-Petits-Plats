@@ -3,7 +3,7 @@
 import * as cards from "./displayCards.js";
 import * as filters from "./displayFilters.js";
 import { showListOfTags, tagsArray } from "./displayTags.js";
-import { isFilterReload } from "./openCloseFilters.js";
+import { isFilterReload, changeInputTypeInText } from "./openCloseFilters.js";
 
 export let theMillTurns = (recipes, filter) => {
   //   console.log(recipes, filter);
@@ -96,37 +96,28 @@ export let IS_TAGGED = (recipes) => {
     input.addEventListener("input", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      let value = input.getAttribute("value");
-      if (input.value.length > 2) {
-        let googledTags = theMillTags(recipes, value, input.value);
-        console.log(googledTags);
-      } else {
-        // ON VIDE LE TABLEAU DES TAGS
-        while (tagsArray.length > 0) {
-          tagsArray.pop();
-        }
-        // console.log(tagsArray);
-        showListOfTags(tagsArray);
+      // console.log(e);
 
-        filters.DISPLAY_FILTERS(recipes);
+      // ON VIDE LE TABLEAU DES TAGS
+      while (tagsArray.length > 0) {
+        tagsArray.pop();
       }
+      // console.log(tagsArray);
+      showListOfTags(tagsArray);
+      cards.DISPLAY_CARDS(recipes);
+
+      let value = input.getAttribute("data-value");
+      let color = input.getAttribute("data-color");
+
+      input.nextElementSibling.remove();
+
+      filters.DISPLAY_FILTERS(recipes, input, input.value, value, color);
+      input.parentNode.style.width = "66%";
+      input.setAttribute("placeholder", "Recherche un ingrédient");
+      input.nextElementSibling.classList.add("filter__show");
+      input.previousElementSibling.classList.add(
+        "filter__custom-arrow--rotate"
+      );
     });
   });
-};
-
-const theMillTags = (recipes, value, filter) => {
-  switch (value) {
-    case "Ustensiles":
-      // console.log(filters.displayFilterUstensils(recipes, filter));
-      return filters.displayFilterUstensils(recipes, filter);
-    case "Appareil":
-      // console.log(filters.displayFilterAppliance(recipes, filter));
-      return filters.displayFilterAppliance(recipes, filter);
-    case "Ingrédients":
-      // console.log(filters.displayFilterIngredients(recipes, filter));
-      return filters.displayFilterIngredients(recipes, filter);
-
-    default:
-      break;
-  }
 };
