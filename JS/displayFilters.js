@@ -5,8 +5,8 @@ import * as utils from "./utils.js";
 import { listenFilter } from "./displayTags.js";
 
 // NEW SET : distinct INGREDIENTS
-const displayFilterIngredients =
-  (renderRecipes.prototype.displayFilterIngredients = function (data) {
+export const displayFilterIngredients =
+  (renderRecipes.prototype.displayFilterIngredients = function (data, filter) {
     // console.log(data);
     const distinctIngredients = [
       ...new Set(
@@ -26,8 +26,8 @@ const displayFilterIngredients =
   });
 
 // NEW SET : distinct APPLIANCE
-const displayFilterAppliance = (renderRecipes.prototype.displayFilterAppliance =
-  function (data) {
+export const displayFilterAppliance = (renderRecipes.prototype.displayFilterAppliance =
+  function (data, filter) {
     // console.log(data);
     const distinctAppliance = [
       ...new Set(
@@ -40,8 +40,8 @@ const displayFilterAppliance = (renderRecipes.prototype.displayFilterAppliance =
   });
 
 // NEW SET : distinct USTENSILS
-const displayFilterUstensils = (renderRecipes.prototype.displayFilterUstensils =
-  function (data) {
+export const displayFilterUstensils = (renderRecipes.prototype.displayFilterUstensils =
+  function (data, filter) {
     // console.log(data);
     const distinctUstensils = [
       ...new Set(

@@ -93,14 +93,40 @@ export let IS_TAGGED = (recipes) => {
   const takeFilter = document.querySelectorAll(".filter__select");
 
   takeFilter.forEach((input) => {
-    input.addEventListener("input", () => {
+    input.addEventListener("input", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      let value = input.getAttribute("value");
       if (input.value.length > 2) {
-        //   console.log(takeFilter.value);
-        const googledRecipes = theMillTurns(recipes, input.value);
-        // console.log(googledRecipes);
-        cards.DISPLAY_CARDS(googledRecipes);
-        filters.DISPLAY_FILTERS(googledRecipes);
+        let googledTags = theMillTags(recipes, value, input.value);
+        console.log(googledTags);
+      } else {
+        // ON VIDE LE TABLEAU DES TAGS
+        while (tagsArray.length > 0) {
+          tagsArray.pop();
+        }
+        // console.log(tagsArray);
+        showListOfTags(tagsArray);
+
+        filters.DISPLAY_FILTERS(recipes);
       }
     });
   });
+};
+
+const theMillTags = (recipes, value, filter) => {
+  switch (value) {
+    case "Ustensiles":
+      // console.log(filters.displayFilterUstensils(recipes, filter));
+      return filters.displayFilterUstensils(recipes, filter);
+    case "Appareil":
+      // console.log(filters.displayFilterAppliance(recipes, filter));
+      return filters.displayFilterAppliance(recipes, filter);
+    case "Ingrédients":
+      // console.log(filters.displayFilterIngredients(recipes, filter));
+      return filters.displayFilterIngredients(recipes, filter);
+
+    default:
+      break;
+  }
 };
