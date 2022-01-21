@@ -47,3 +47,13 @@ export const tagIsNoneDanger = () => {
 export const tagIsNonePrimary = () => {
   document.getElementsByClassName("tags__item--primary").style.display = "none";
 };
+
+export const deleteDuplicatesGoogled = (array) => {
+  let cleanDuplicate = [];
+  array.forEach((item) => {
+    // console.log(item.id);
+    cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : "";
+  });
+  console.log(cleanDuplicate);
+  return cleanDuplicate;
+};

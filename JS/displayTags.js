@@ -3,6 +3,7 @@
 import * as cards from "./displayCards.js";
 import { theMillTurns } from "./google.js";
 import { isFilterReload } from "./openCloseFilters.js";
+import { deleteDuplicatesGoogled } from "./utils.js";
 
 export var tagsArray = [
   // { title: "", color: "" },
@@ -38,9 +39,10 @@ export const listenFilter = (data, keywordlist) => {
         // console.log(filteredRecipes);
 
         filteredRecipes = theMillTurns(filteredRecipes, tagObject.title);
-        isFilterReload(filteredRecipes);
-        cards.DISPLAY_CARDS(filteredRecipes);
-        console.log(filteredRecipes);
+        let distinctFilteredRecipes = deleteDuplicatesGoogled(filteredRecipes);
+        isFilterReload(distinctFilteredRecipes);
+        cards.DISPLAY_CARDS(distinctFilteredRecipes);
+        console.log(distinctFilteredRecipes);
 
         // SI RESTE UNE CARD ALORS DESACTIVATION DES LI
         if (filteredRecipes.length === 1) {

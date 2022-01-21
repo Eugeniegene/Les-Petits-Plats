@@ -3,7 +3,8 @@
 import * as cards from "./displayCards.js";
 import * as filters from "./displayFilters.js";
 import { showListOfTags, tagsArray } from "./displayTags.js";
-import { isFilterReload, isFiltersInteractive } from "./openCloseFilters.js";
+import { isFilterReload } from "./openCloseFilters.js";
+import { deleteDuplicatesGoogled } from "./utils.js";
 
 export let theMillTurns = (recipes, filter) => {
   //   console.log(recipes, filter);
@@ -11,13 +12,14 @@ export let theMillTurns = (recipes, filter) => {
 
   recipes.map((recipe) => {
     // console.log(recipe);
+
     if (
       // une recette ?
-      recipe.name.toLowerCase().trim().includes(filter.toLowerCase().trim()) &&
+      recipe.name.toLowerCase().trim().includes(filter.toLowerCase().trim()) ||
       recipe.description
         .toLowerCase()
         .trim()
-        .includes(filter.toLowerCase().trim()) &&
+        .includes(filter.toLowerCase().trim()) ||
       // un appareil ?
       recipe.appliance
         .toLowerCase()
@@ -27,6 +29,7 @@ export let theMillTurns = (recipes, filter) => {
       googledCards.push(recipe);
       //   console.log(cards);
     }
+
     // un ustensil ?
     recipe.ustensils.filter((elt) => {
       //   console.log(elt, filter);
@@ -63,15 +66,11 @@ export let IS_GOOGLE = (recipes) => {
     if (takeIt.value.length > 2) {
       //   console.log(takeIt.value);
       const googledRecipes = theMillTurns(recipes, takeIt.value);
-      //   console.log(googledRecipes);
-      cards.DISPLAY_CARDS(googledRecipes);
-      filters.DISPLAY_FILTERS(googledRecipes);
+      const googledRecipesDistinct = deleteDuplicatesGoogled(googledRecipes);
+      // console.log(googledRecipesDistinct);
+      cards.DISPLAY_CARDS(googledRecipesDistinct);
+      filters.DISPLAY_FILTERS(googledRecipesDistinct);
       isFilterReload(recipes);
-      // document
-      //   .querySelectorAll(".filter__select")
-      //   .forEach((filter) =>
-      //     isFiltersInteractive(filter, filter.getAttribute("value"))
-      //   );
     } else {
       // SINON TABLEAU DES RECETTES
       cards.DISPLAY_CARDS(recipes);
