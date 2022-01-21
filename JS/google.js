@@ -13,11 +13,11 @@ export let theMillTurns = (recipes, filter) => {
     // console.log(recipe);
     if (
       // une recette ?
-      recipe.name.toLowerCase().trim().includes(filter.toLowerCase().trim()) ||
-      // recipe.description
-      //   .toLowerCase()
-      //   .trim()
-      //   .includes(filter.toLowerCase().trim()) ||
+      recipe.name.toLowerCase().trim().includes(filter.toLowerCase().trim()) &&
+      recipe.description
+        .toLowerCase()
+        .trim()
+        .includes(filter.toLowerCase().trim()) &&
       // un appareil ?
       recipe.appliance
         .toLowerCase()
@@ -66,11 +66,12 @@ export let IS_GOOGLE = (recipes) => {
       //   console.log(googledRecipes);
       cards.DISPLAY_CARDS(googledRecipes);
       filters.DISPLAY_FILTERS(googledRecipes);
-      document
-        .querySelectorAll(".filter__select")
-        .forEach((filter) =>
-          isFiltersInteractive(filter, filter.getAttribute("value"))
-        );
+      isFilterReload(recipes);
+      // document
+      //   .querySelectorAll(".filter__select")
+      //   .forEach((filter) =>
+      //     isFiltersInteractive(filter, filter.getAttribute("value"))
+      //   );
     } else {
       // SINON TABLEAU DES RECETTES
       cards.DISPLAY_CARDS(recipes);
