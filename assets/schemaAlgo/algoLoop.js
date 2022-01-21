@@ -1838,5 +1838,52 @@ let theMillTurnsLoop = (recipes, filter) => {
   return googledCards;
 };
 
-console.log(theMillTurnsLoop(recipesLoop, filterLoop));
+let ingredientsArray = (recipes, filter) => {
+  // console.log(recipes);
+  let distinctIngredients = [];
+  let filterFilter = filter.toLowerCase().trim();
+
+  for (const recipe of recipes) {
+    // console.log(recipe);
+    for (const ingredient of recipe.ingredients) {
+      let currentIngredient = ingredient.ingredient.toLowerCase().trim();
+      // console.log(currentIngredient);
+      if (distinctIngredients.length === 0) {
+        distinctIngredients.push(currentIngredient);
+        // console.log(ingredients);
+      } else {
+        let isIn = false;
+        for (const itemInIngredients of distinctIngredients) {
+          // console.log(itemInIngredients);
+          if (itemInIngredients === currentIngredient) {
+            isIn = true;
+          }
+        }
+        if (!isIn) {
+          distinctIngredients.push(currentIngredient);
+        }
+      }
+    }
+  }
+
+  // SI RECHERCHE DANS INPUT....
+  if (filter) {
+    // console.log(
+    //   distinctIngredients.filter((ingredient) =>
+    //     ingredient.includes(filter.toLowerCase().trim())
+    //   )
+    // );
+    return distinctIngredients.filter((ingredient) =>
+      ingredient.includes(filterFilter.toLowerCase().trim())
+    );
+  }
+  // SANS RECHERCHE
+  return distinctIngredients;
+};
+
+console.log(
+  theMillTurnsLoop(recipesLoop, filterLoop),
+  ingredientsArray(recipesLoop, "pomme")
+);
 theMillTurnsLoop(recipesLoop, filterLoop);
+ingredientsArray(recipesLoop, filterLoop);

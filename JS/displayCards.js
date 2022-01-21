@@ -20,9 +20,9 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
       document.querySelector(".cards__no-recipes").remove();
     }
   }
+
   recipes.forEach((recipe) => {
     // console.log(recipe);
-
     let listCard_HTML = "";
 
     recipe.ingredients.map((elt) => {

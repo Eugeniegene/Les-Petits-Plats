@@ -4,8 +4,6 @@ import * as cards from "./displayCards.js";
 import { theMillTurns } from "./google.js";
 import { isFilterReload } from "./openCloseFilters.js";
 
-var filteredRecipes = "";
-
 export var tagsArray = [
   // { title: "", color: "" },
 ];
@@ -20,6 +18,7 @@ const tagIsNone = (e) => {
 };
 
 export const listenFilter = (data, keywordlist) => {
+  var filteredRecipes = data;
   for (const keyword of keywordlist) {
     keyword.addEventListener("click", () => {
       let dataTitle = keyword.textContent;
@@ -27,31 +26,33 @@ export const listenFilter = (data, keywordlist) => {
       let tagObject = { title: `${dataTitle}`, color: `${dataColor}` };
 
       // VERIFIE SI LE TAG EST PRESENT pour éviter doublons OU lancer algo
-      let verif = false;
+      let inTagsArray = false;
 
       tagsArray.forEach((tag) => {
         // console.log(tag);
-        verif = tag.title === tagObject.title;
+        inTagsArray = tag.title === tagObject.title;
       });
 
-      if (!verif) {
-        console.log(tagsArray.length);
-        // la value devient filtre et affichage des recipes
-        if (tagsArray.length === 0) {
-          filteredRecipes = theMillTurns(data, tagObject.title);
-          isFilterReload(filteredRecipes);
-          cards.DISPLAY_CARDS(filteredRecipes);
-        } else if (tagsArray.length >= 1) {
-          filteredRecipes = theMillTurns(filteredRecipes, tagObject.title);
-          console.log(filteredRecipes);
-          isFilterReload(filteredRecipes);
-          cards.DISPLAY_CARDS(filteredRecipes);
-        }
+      if (!inTagsArray) {
+        // console.log(tagsArray.length);
+        // console.log(filteredRecipes);
 
-        // le mot de la liste devient un tag affiché
+        filteredRecipes = theMillTurns(filteredRecipes, tagObject.title);
+        isFilterReload(filteredRecipes);
+        cards.DISPLAY_CARDS(filteredRecipes);
+        console.log(filteredRecipes);
+
+        // SI RESTE UNE CARD ALORS DESACTIVATION DES LI
+        if (filteredRecipes.length === 1) {
+          document.querySelectorAll(".filter__custom-option").forEach((li) => {
+            li.classList.remove("filter__custom-option");
+            li.classList.add("filter__custom-option--enable");
+          });
+        }
+        // AU CLICK LES LI DEVIENT UN TAG AFFICHé
         tagsArray.push(tagObject);
         showListOfTags(tagsArray);
-        //   les keywords présents de la liste sont grisé
+        // AU CLICK LE LI DEVIEN INACTIF ET GRISE
         tagsArray.forEach((tag) => {
           document.querySelectorAll(".filter__custom-option").forEach((li) => {
             if (tag.title.includes(li.textContent)) {

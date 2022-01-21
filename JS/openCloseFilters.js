@@ -84,48 +84,46 @@ export const isFilterReload = (renderRecipes.prototype.isFilterClosed = (
   });
 });
 
-export const changeInputTypeInText = (renderRecipes.prototype.changeInputTypeInText = (
-  button,
-  buttonValue
-) => {
-  button.setAttribute("type", "text");
-  button.setAttribute("data-value", `${buttonValue}`);
-  // button.removeAttribute("value");
-  button.value = "";
+export const changeInputTypeInText =
+  (renderRecipes.prototype.changeInputTypeInText = (button, buttonValue) => {
+    button.setAttribute("type", "text");
+    button.setAttribute("data-value", `${buttonValue}`);
+    // button.removeAttribute("value");
+    button.value = "";
 
-  switch (buttonValue) {
-    case "Appareil":
-      // élargie le button type texte
-      button.parentNode.style.width = "66%";
-      // set un placeholder
-      button.setAttribute("placeholder", "Recherche un appareil");
-      // affiche la liste
-      button.nextElementSibling.classList.add("filter__show");
-      // rotate de la fleche
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
+    switch (buttonValue) {
+      case "Appareil":
+        // élargie le button type texte
+        button.parentNode.style.width = "66%";
+        // set un placeholder
+        button.setAttribute("placeholder", "Recherche un appareil");
+        // affiche la liste
+        button.nextElementSibling.classList.add("filter__show");
+        // rotate de la fleche
+        button.previousElementSibling.classList.add(
+          "filter__custom-arrow--rotate"
+        );
 
-      break;
-    case "Ingrédients":
-      button.parentNode.style.width = "66%";
-      button.setAttribute("placeholder", "Recherche un ingrédient");
-      button.nextElementSibling.classList.add("filter__show");
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
+        break;
+      case "Ingrédients":
+        button.parentNode.style.width = "66%";
+        button.setAttribute("placeholder", "Recherche un ingrédient");
+        button.nextElementSibling.classList.add("filter__show");
+        button.previousElementSibling.classList.add(
+          "filter__custom-arrow--rotate"
+        );
 
-      break;
-    case "Ustensiles":
-      button.parentNode.style.width = "66%";
-      button.setAttribute("placeholder", "Recherche un ustensile");
-      button.nextElementSibling.classList.add("filter__show");
-      button.previousElementSibling.classList.add(
-        "filter__custom-arrow--rotate"
-      );
+        break;
+      case "Ustensiles":
+        button.parentNode.style.width = "66%";
+        button.setAttribute("placeholder", "Recherche un ustensile");
+        button.nextElementSibling.classList.add("filter__show");
+        button.previousElementSibling.classList.add(
+          "filter__custom-arrow--rotate"
+        );
 
-      break;
-    default:
-      break;
-  }
-});
+        break;
+      default:
+        break;
+    }
+  });

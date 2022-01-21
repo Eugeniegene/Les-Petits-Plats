@@ -7,7 +7,7 @@ import { listenFilter } from "./displayTags.js";
 // NEW SET : distinct INGREDIENTS
 export const displayFilterIngredients =
   (renderRecipes.prototype.displayFilterIngredients = function (data, filter) {
-    // console.log(filter);
+    // console.log(data, filter);
 
     const distinctIngredients = [
       ...new Set(
@@ -34,7 +34,7 @@ export const displayFilterIngredients =
       );
     }
     // SANS RECHERCHE
-    return distinctIngredients;
+    return utils.shuffle(distinctIngredients);
   });
 
 // NEW SET : distinct APPLIANCE
@@ -107,7 +107,7 @@ export const hydrateFilter = (renderRecipes.prototype.hydrateFilter = function (
   filter
 ) {
   // console.log(value);
-  // console.log(data, value, btn);
+  // console.log(data, value, btn, filter);
   switch (value) {
     case "Ingrédients":
       // console.log(data, filter);

@@ -1784,6 +1784,81 @@ const recipesFunc = [
   },
 ];
 
+// NEW SET : distinct INGREDIENTS
+let displayFilterIngredients = function (data, filter) {
+  // console.log(filter);
+
+  const distinctIngredients = [
+    ...new Set(
+      data
+        .map((recipe) =>
+          recipe.ingredients.map((ingredient) =>
+            ingredient.ingredient.toLowerCase().trim()
+          )
+        )
+        .flat()
+        .sort()
+    ),
+  ];
+
+  // SI RECHERCHE DANS INPUT....
+  if (filter) {
+    // console.log(
+    //   distinctIngredients.filter((ingredient) =>
+    //     ingredient.includes(filter.toLowerCase().trim())
+    //   )
+    // );
+    return distinctIngredients.filter((ingredient) =>
+      ingredient.includes(filter.toLowerCase().trim())
+    );
+  }
+  // SANS RECHERCHE
+  return utils.shuffle(distinctIngredients);
+};
+
+// NEW SET : distinct APPLIANCE
+let displayFilterAppliance = function (data, filter) {
+  // console.log(data);
+  const distinctAppliance = [
+    ...new Set(
+      data.map((recipe) => recipe.appliance.toLowerCase().trim()).sort()
+    ),
+  ];
+
+  // SI RECHERCHE DANS INPUT....
+  if (filter) {
+    return distinctAppliance.filter((appliance) =>
+      appliance.includes(filter.toLowerCase().trim())
+    );
+  }
+  // SANS RECHERCHE
+  // console.log(distinctAppliance);
+  return distinctAppliance;
+};
+
+// NEW SET : distinct USTENSILS
+let displayFilterUstensils = function (data, filter) {
+  // console.log(data);
+  const distinctUstensils = [
+    ...new Set(
+      data
+        .map((recipe) =>
+          recipe.ustensils.map((item) => item.toLowerCase().trim())
+        )
+        .flat()
+        .sort()
+    ),
+  ];
+  // SI RECHERCHE DANS INPUT....
+  if (filter) {
+    return distinctUstensils.filter((ustensil) =>
+      ustensil.includes(filter.toLowerCase().trim())
+    );
+  }
+  // SANS RECHERCHE
+  return distinctUstensils;
+};
+
 let theMillTurnsFunc = (recipes, filter) => {
   //   console.log(recipes, filter);
   let googledCards = [];
@@ -1829,5 +1904,14 @@ let theMillTurnsFunc = (recipes, filter) => {
   return googledCards;
 };
 
-console.log(theMillTurnsFunc(recipesFunc, filterFunc));
+console.log(
+  theMillTurnsFunc(recipesFunc, filterFunc),
+  displayFilterUstensils(recipesFunc, filterFunc),
+  displayFilterAppliance(recipesFunc, filterFunc),
+  displayFilterIngredients(recipesFunc, filterFunc)
+);
+
 theMillTurnsFunc(recipesFunc, filterFunc);
+displayFilterUstensils(recipesFunc, filterFunc);
+displayFilterAppliance(recipesFunc, filterFunc);
+displayFilterIngredients(recipesFunc, filterFunc);

@@ -217,7 +217,8 @@ body {
   width: 33%;
   padding: 4px 0 4px 20px;
   font-size: var(--fs-18);
-  color: gray;
+  color: rgb(165, 162, 162);
+  pointer-events: none;
 }
 
 .filter__custom-option--enable:hover {
