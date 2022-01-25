@@ -121,7 +121,7 @@ const list_HTML = (renderRecipes.prototype.getList_HTML = (
   distinctData,
   datacolor
 ) => {
-  console.log(distinctData, datacolor);
+  // console.log(distinctData, datacolor);
   let li_HTML = "";
   distinctData.map((setLi) => {
     li_HTML += `<li class="filter__custom-option" data-color="${datacolor}">${utils.capitalize(

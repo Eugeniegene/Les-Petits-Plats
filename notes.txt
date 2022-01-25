@@ -1,6 +1,5 @@
 TO DO LI :
-BUG affichage TAG (tags multiple => de refiltre pas) (affichage des tags non réduites)
-LOOPBRANCH push
+done
 
 REPO :
 https://github.com/git504/Les-Petits-Plats

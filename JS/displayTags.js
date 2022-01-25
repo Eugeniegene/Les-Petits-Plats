@@ -32,13 +32,13 @@ const tagIsNone = (e) => {
 
   if (tagsArray.length === 0) {
     // console.log("zero");
-    console.log(originalRecipes[0]);
+    // console.log(originalRecipes[0]);
     DISPLAY_CARDS(originalRecipes[0]);
     isFilterReload(originalRecipes[0]);
   } else if (tagsArray.length >= 1) {
     let tagReload = [];
     tagReload.push(originalRecipes[0]);
-    console.log(tagReload);
+    // console.log(tagReload);
     tagsArray.forEach((item) => {
       let distinctFilteredRecipes = deleteDuplicatesGoogled(
         theMillTurns(tagReload[0], item.title)
