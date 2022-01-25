@@ -4,37 +4,41 @@ import { renderRecipes } from "./api.js";
 import * as utils from "./utils.js";
 import { listenFilter } from "./displayTags.js";
 
-// NEW SET : distinct INGREDIENTS
+var distinctIngredients = [];
+// NEW DATA ARRAY : distinct INGREDIENTS
 export const displayFilterIngredients =
   (renderRecipes.prototype.displayFilterIngredients = function (data, filter) {
-    // console.log(data, filter);
-
-    const distinctIngredients = [
-      ...new Set(
-        data
-          .map((recipe) =>
-            recipe.ingredients.map((ingredient) =>
-              ingredient.ingredient.toLowerCase().trim()
-            )
-          )
-          .flat()
-          .sort()
-      ),
-    ];
+    for (const recipe of data) {
+      console.log(recipe);
+      for (const ingredient of recipe.ingredients) {
+        let currentIngredient = ingredient.ingredient.toLowerCase().trim();
+        // console.log(currentIngredient);
+        if (distinctIngredients.length === 0) {
+          distinctIngredients.push(currentIngredient);
+          // console.log(ingredients);
+        } else {
+          let isIn = false;
+          for (const itemInIngredients of distinctIngredients) {
+            // console.log(itemInIngredients);
+            if (itemInIngredients === currentIngredient) {
+              isIn = true;
+            }
+          }
+          if (!isIn) {
+            distinctIngredients.push(currentIngredient);
+          }
+        }
+      }
+    }
 
     // SI RECHERCHE DANS INPUT....
     if (filter) {
-      // console.log(
-      //   distinctIngredients.filter((ingredient) =>
-      //     ingredient.includes(filter.toLowerCase().trim())
-      //   )
-      // );
       return distinctIngredients.filter((ingredient) =>
         ingredient.includes(filter.toLowerCase().trim())
       );
     }
     // SANS RECHERCHE
-    return utils.shuffle(distinctIngredients);
+    return distinctIngredients;
   });
 
 // NEW SET : distinct APPLIANCE
@@ -87,7 +91,7 @@ const list_HTML = (renderRecipes.prototype.getList_HTML = (
   distinctData,
   datacolor
 ) => {
-  // console.log(distinctData, datacolor);
+  console.log(distinctData, datacolor);
   let li_HTML = "";
   distinctData.map((setLi) => {
     li_HTML += `<li class="filter__custom-option" data-color="${datacolor}">${utils.capitalize(
