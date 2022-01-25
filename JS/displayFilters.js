@@ -153,7 +153,7 @@ export const DISPLAY_FILTERS = (renderRecipes.displayFilters = function (
   if (btn && filter && value && color) {
     // console.log(data, btn, filter, value, color);
     hydrateFilter(data, value, btn, color, filter);
-  } else {
+  } else if (data) {
     document.querySelectorAll(".filter__select").forEach((button) => {
       let value = button.getAttribute("value");
       // console.log(value, button);

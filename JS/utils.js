@@ -1,5 +1,9 @@
 // console.log("%c utils.js", "color: green; font-weight:bold;");
 
+import { DISPLAY_FILTERS } from "./displayFilters.js";
+import { GET_RECIPES_HYDRATE } from "../index.js";
+import { renderRecipes } from "./api.js";
+
 // MELANGER LES ELEMENTS D'UN TABLEAU
 export const shuffle = (array) => {
   let currentIndex = array.length,
@@ -34,7 +38,8 @@ export const capitalize = (str) => {
 
 // RELOAD window.location.reload
 export const windowLocationReload = () => {
-  window.location.reload();
+  // window.location.reload();
+
 };
 
 // CLOSE TAGS
@@ -54,6 +59,6 @@ export const deleteDuplicatesGoogled = (array) => {
     // console.log(item.id);
     cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : "";
   });
-  console.log(cleanDuplicate);
+  // console.log(cleanDuplicate);
   return cleanDuplicate;
 };

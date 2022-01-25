@@ -15,7 +15,10 @@ export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
     filters.DISPLAY_FILTERS(recipes);
     google.IS_GOOGLE(recipes);
     google.IS_TAGGED(recipes);
+    return recipes;
   });
+
+
 
 // ASSURE L'OUVERTURE ET LA FERMETURE DES FILTRES
 let buttons = document.querySelectorAll(".filter__select");

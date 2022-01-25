@@ -10,6 +10,7 @@ export const GET_RECIPES = (async () => {
     })
     .then((data) => {
       index.GET_RECIPES_HYDRATE(data.recipes);
+
     })
     .catch((error) => {
       error.message;
@@ -18,6 +19,7 @@ export const GET_RECIPES = (async () => {
 
 // FUNCTION CONSTRUCTEUR
 export function renderRecipes(data) {
+  // console.log(data);
   this.data = data;
   this.returnRecipes = function (data) {
     console.log(data);
