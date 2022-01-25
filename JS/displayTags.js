@@ -32,19 +32,22 @@ const tagIsNone = (e) => {
 
   if (tagsArray.length === 0) {
     // console.log("zero");
-    // console.log(originalRecipes[0]);
+    console.log(originalRecipes[0]);
     DISPLAY_CARDS(originalRecipes[0]);
     isFilterReload(originalRecipes[0]);
   } else if (tagsArray.length >= 1) {
+    let tagReload = [];
+    tagReload.push(originalRecipes[0]);
+    console.log(tagReload);
     tagsArray.forEach((item) => {
       let distinctFilteredRecipes = deleteDuplicatesGoogled(
-        theMillTurns(originalRecipes[0], item.title)
+        theMillTurns(tagReload[0], item.title)
       );
       console.log(distinctFilteredRecipes);
-      originalRecipes[0] = [...distinctFilteredRecipes];
+      tagReload[0] = [...distinctFilteredRecipes];
     });
-    isFilterReload(originalRecipes[0]);
-    cards.DISPLAY_CARDS(originalRecipes[0]);
+    isFilterReload(tagReload[0]);
+    cards.DISPLAY_CARDS(tagReload[0]);
   }
   showListOfTags(tagsArray);
 };
