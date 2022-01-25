@@ -17,7 +17,7 @@ export var tagsArray = [
 // LISTENNER DES TAGS
 const listenToTags = function (data) {
   document.querySelectorAll(".tags__close").forEach((X) => {
-    console.log(tagsArray.length);
+    // console.log(tagsArray.length);
     X.addEventListener("click", tagIsNone);
   });
 };
@@ -32,18 +32,18 @@ const tagIsNone = (e) => {
 
   if (tagsArray.length === 0) {
     // console.log("zero");
-    console.log(originalRecipes[0]);
+    // console.log(originalRecipes[0]);
     DISPLAY_CARDS(originalRecipes[0]);
     isFilterReload(originalRecipes[0]);
   } else if (tagsArray.length >= 1) {
     let tagReload = [];
     tagReload.push(originalRecipes[0]);
-    console.log(tagReload);
+    // console.log(tagReload);
     tagsArray.forEach((item) => {
       let distinctFilteredRecipes = deleteDuplicatesGoogled(
         theMillTurns(tagReload[0], item.title)
       );
-      console.log(distinctFilteredRecipes);
+      // console.log(distinctFilteredRecipes);
       tagReload[0] = [...distinctFilteredRecipes];
     });
     isFilterReload(tagReload[0]);

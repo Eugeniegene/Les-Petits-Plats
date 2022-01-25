@@ -38,13 +38,7 @@ buttons.forEach((btn) => {
 console.timeEnd("index.js");
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
-// setTimeout(() => {
-//   console.clear("this is the first message");
-// }, 7000);
+setTimeout(() => {
+  console.clear("this is the first message");
+}, 7000);
 
-// if exist
-// filter en func
-// ok...2pointers technique
-// copie feuille loop filter et feuille loop google
-//cumul tags
-// dissou tags
